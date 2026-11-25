@@ -139,3 +139,77 @@ html[data-theme="dark"] .note,html[data-theme="dark"] small,html[data-theme="dar
 html[data-theme="dark"] a{color:#b5a2ff}
 html[data-theme="dark"] .hb-brand-link{color:#f3f1fc}
 
+/* 1.9.0 · Interactive blank slot in exercises & lessons */
+.hb-prompt-heading{line-height:1.45}
+.hb-slot{display:inline-flex;align-items:center;justify-content:center;min-width:4.4ch;padding:2px 13px;margin:0 3px;border-radius:12px;border:2px dashed #9d89df;background:#f2edff;color:#4327a0;font-weight:800;vertical-align:baseline;transition:all .18s ease}
+.hb-slot.filled{border-style:solid;border-color:#5b3cc4;background:#e8dfff;animation:hb-slot-pop .2s cubic-bezier(.22,1,.36,1)}
+.hb-slot.good{border-color:#2c9c67;background:#dff5e8;color:#145c38}
+.hb-slot.bad{border-color:#d45a64;background:#fde9ea;color:#99242f;text-decoration:line-through;text-decoration-thickness:2px}
+.hb-slot.contrast{border-color:#d4972a;background:#fff3d6;color:#7a5006}
+@keyframes hb-slot-pop{0%{transform:scale(.92)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+
+/* Step-by-step interactive lesson canvas */
+.lesson-stepper{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:6px;background:var(--brand-soft,#eee8fc);border:1px solid var(--line,#e2ddec);border-radius:16px}
+.lesson-stepper .step-tab{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 10px;border-radius:12px;background:transparent;color:var(--muted,#5f526f);border:1px solid transparent;font-weight:750;font-size:14px}
+.lesson-stepper .step-tab b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(91,60,196,.12);color:var(--brand-dark,#4327a0);font-size:12px;flex:none}
+.lesson-stepper .step-tab.done b{background:#17603c;color:#fff}
+.lesson-stepper .step-tab.active{background:#fff;color:var(--brand-dark,#4327a0);border-color:var(--line,#e2ddec);box-shadow:0 2px 8px #30205b12}
+.lesson-stepper .step-tab.active b{background:var(--cat,var(--v,#5b3cc4));color:#fff}
+.lesson-panel{animation:hb-step-in .22s cubic-bezier(.22,1,.36,1) both}
+.lesson-step-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px}
+.lesson-step-nav button{display:inline-flex;align-items:center;gap:7px}
+@media(max-width:600px){.lesson-stepper{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Aditza visual agreement equation */
+.lab-equation{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:8px 0 6px}
+.lab-eq-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.85);border:1.5px solid var(--rc,#087f70);font-size:13px;font-weight:700;color:#211c38}
+.lab-eq-chip b{font-size:10px;letter-spacing:.06em;color:var(--rc,#087f70);font-weight:800}
+.lab-eq-op{font-weight:800;color:#087f70;opacity:.7}
+
+/* Desktop Bento layouts for Atlas & Nire bidea */
+.hb-atlas-bento{display:grid;gap:16px;align-items:start}
+.hb-atlas-bento .map-detail{margin:0;padding:18px;border-radius:20px;border:1px solid var(--cat-line,var(--line,#e2ddec));background:#fff;display:grid;gap:10px}
+.hb-atlas-bento .map-detail h3{margin:0;font-size:22px}
+.hb-atlas-bento .map-detail>p{margin:0;color:var(--muted,#625b73);font-size:14px}
+.hb-map-families{display:grid;gap:8px;margin-top:4px}
+.hb-bento-2{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+.hb-bento-2>*{margin:0!important;height:100%;display:flex;flex-direction:column}
+.hb-bento-2>section>button{margin-top:auto;align-self:flex-start}
+@media(min-width:960px){
+ .hb-atlas-bento{grid-template-columns:minmax(0,1.32fr) minmax(320px,.92fr)}
+ .hb-atlas-bento .map-world.hb-atlas{padding:16px;gap:12px}
+ .hb-atlas-bento .hb-atlas .map-stop{min-height:152px;padding:10px 6px}
+ .hb-atlas-bento .hb-atlas .map-stop .island-art{max-width:118px}
+ .hb-bento-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hb-bento-2 .milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Single dignified global editorial footer */
+.hb-site-footer{max-width:1100px;margin:0 auto;padding:12px 22px 104px;color:var(--muted,#625b73);font-size:12px}
+.hb-footer-inner{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:8px 18px;border-top:1px solid var(--line,#e2ddec);padding-top:14px}
+.hb-site-footer details{max-width:62ch}
+.hb-site-footer summary{cursor:pointer;font-weight:700;color:var(--muted,#625b73);list-style:none}
+.hb-site-footer summary::-webkit-details-marker{display:none}
+.hb-site-footer summary::after{content:" ▾";font-size:11px}
+.hb-site-footer details[open] summary::after{content:" ▴"}
+.hb-site-footer p{margin:6px 0 0;line-height:1.5}
+@media(min-width:860px){.hb-site-footer{padding-bottom:32px}}
+@media(max-width:540px){.hb-site-footer{padding-inline:14px}}
+
+/* Dark mode support for v1.9.0 components */
+html[data-theme="dark"] .hb-slot{background:#29224a;border-color:#7d68d6;color:#e4dcff}
+html[data-theme="dark"] .hb-slot.filled{background:#352b63;border-color:#a992ff;color:#fff}
+html[data-theme="dark"] .hb-slot.good{background:#143326;border-color:#3fb581;color:#bff5d9}
+html[data-theme="dark"] .hb-slot.bad{background:#3a1820;border-color:#e06c7a;color:#ffd0d6}
+html[data-theme="dark"] .hb-slot.contrast{background:#332712;border-color:#d89c3a;color:#ffe6b3}
+html[data-theme="dark"] .lesson-stepper{background:#171428;border-color:#342e52}
+html[data-theme="dark"] .lesson-stepper .step-tab{color:#b7b0ce}
+html[data-theme="dark"] .lesson-stepper .step-tab b{background:#2a244a;color:#d4c8ff}
+html[data-theme="dark"] .lesson-stepper .step-tab.active{background:#32295c;color:#fff;border-color:#6857b5}
+html[data-theme="dark"] .lab-eq-chip{background:#1c192e;color:#f3f1fc}
+html[data-theme="dark"] .lab-eq-op{color:#7de3d1}
+html[data-theme="dark"] .hb-atlas-bento .map-detail{background:#1c192e;border-color:#342e52;color:#f3f1fc}
+html[data-theme="dark"] .hb-footer-inner{border-color:#342e52}
+@media(prefers-reduced-motion:reduce){.hb-slot.filled,.lesson-panel{animation:none!important}}
+
+
