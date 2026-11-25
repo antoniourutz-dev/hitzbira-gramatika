@@ -339,3 +339,49 @@ nav button {display:flex;flex-direction:column;align-items:center;justify-conten
  .welcome-bira>span{font-size:12px}
  .home-screen .bira-challenge .bira-art{width:67px;height:auto}
 }
+
+/* 06 / the visual world of Bira */
+.goal-panel,.adventure-map{background:#fff;border:1px solid var(--line);border-radius:23px;padding:clamp(16px,3vw,26px);box-shadow:var(--shadow);min-width:0}
+.goal-intro .catalog-kicker,.adventure-head .catalog-kicker{color:var(--brand-dark)}
+.goal-intro h2,.adventure-head h2{margin:5px 0;font-size:clamp(23px,3vw,30px);line-height:1.2}
+.goal-intro p,.adventure-head p{margin:0 0 16px;color:var(--muted);font-size:14px}
+.goal-controls{display:grid;grid-template-columns:1fr 1.2fr 1.35fr;gap:16px;align-items:end}
+.goal-controls fieldset{border:0;padding:0;margin:0;min-width:0}
+.goal-controls legend,.goal-controls label{font-size:13px;font-weight:750;margin:0 0 7px;color:var(--ink)}
+.goal-choice{display:flex;gap:6px;flex-wrap:wrap}
+.goal-choice button{flex:1;min-height:44px;padding:8px 10px;font-size:14px}
+.goal-choice button.selected{background:var(--brand-dark);color:white}
+.goal-footer{display:flex;gap:12px;align-items:center;justify-content:space-between;margin:17px 0 10px}
+.goal-footer button{display:flex;gap:8px;align-items:center;justify-content:center}
+.goal-footer button svg{width:20px;height:20px}
+.goal-panel>small{font-size:12px}
+.adventure-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.adventure-head .bira-art{width:86px;height:auto;flex-shrink:0}
+.map-world{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;position:relative;isolation:isolate;background:linear-gradient(135deg,#f1f6fc,#faf5ff);padding:18px 12px;border-radius:20px}
+.map-world:before{content:"";position:absolute;left:8%;right:8%;top:49%;border-top:3px dashed #c5bddc;z-index:-1}
+.map-stop{display:flex;flex-direction:column;align-items:center;gap:7px;background:#ffffffeb;border:1px solid var(--cat-line);border-radius:19px!important;color:var(--ink);text-align:center;padding:12px 8px;min-width:0;box-shadow:0 4px 12px #30205b08;position:relative;transition:transform .16s ease,border-color .16s ease}
+.map-index{position:absolute;left:9px;top:9px;font-size:10px;font-weight:850;color:var(--cat-dark);background:var(--cat-soft);border-radius:8px;padding:4px 6px}
+.home-screen .map-stop .island-art,.learning-screen .map-stop .island-art,.map-stop .island-art{width:min(100%,112px);height:auto;aspect-ratio:124/106;display:block}
+.map-stop strong{font-size:15px;font-weight:800;line-height:1.25;overflow-wrap:anywhere}
+.map-stop small{font-size:11px;color:var(--muted);font-weight:600;line-height:1.4;margin-top:auto}
+.map-track{width:100%;height:6px;border-radius:12px;background:#eeebf4;overflow:hidden}
+.map-track>span{display:block;height:100%;border-radius:12px;background:var(--cat)}
+.map-link{display:flex;align-items:center;gap:4px;color:var(--cat-dark);font-size:12px;font-weight:750}
+.map-link svg{width:15px!important;height:15px!important}
+.adventure-map>.note{margin:12px 0 0}
+.catalog-hero-art.illustrated,.learning-hero-icon.illustrated{transform:none;overflow:visible}
+.catalog-hero-art.illustrated svg,.learning-hero-icon.illustrated svg{width:95%;height:auto;transform:none}
+.source-parts{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.source-part{background:var(--cat-soft);border:1px solid var(--cat-line);border-radius:13px;padding:13px;flex:1 1 145px;min-width:0}
+.source-part>span{font-size:10px;font-weight:850;color:var(--cat-dark);letter-spacing:.7px}
+.source-part p{font-weight:650;font-size:16px;margin:7px 0 0;line-height:1.5;overflow-wrap:anywhere}
+.source-parts>.visual-link{align-self:center}
+.source-caption{font-size:14px;color:var(--muted);margin:12px 0 0}
+.feedback-enter{animation:feedback-in .24s ease-out both}
+@keyframes feedback-in{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:none}}
+.finish-icon{animation:finish-in .35s cubic-bezier(.2,.8,.3,1.2) both}
+@keyframes finish-in{from{transform:scale(.75)}to{transform:scale(1)}}
+@media(hover:hover){.map-stop:hover{transform:translateY(-3px);border-color:var(--cat);filter:none!important}}
+@media(max-width:850px){.map-world{grid-template-columns:repeat(3,minmax(0,1fr))}.map-world:before{display:none}.goal-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.goal-controls>div{grid-column:1/-1}}
+@media(max-width:540px){.map-world{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px}.map-stop{padding:12px 8px;gap:6px}.map-stop:last-child{grid-column:1/-1;max-width:220px;justify-self:center;width:100%}.map-stop strong{font-size:14px}.map-stop small{font-size:11px}.map-stop .island-art{max-width:92px}.adventure-head .bira-art{width:62px}.goal-controls{gap:12px}.goal-choice{gap:4px}.goal-choice button{padding:7px;font-size:13px}.goal-footer{flex-wrap:wrap}.goal-footer button{width:100%}.source-part{flex-basis:100%}.source-parts>.visual-link{width:100%;text-align:center;transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){.feedback-enter,.finish-icon{animation:none!important}.map-stop:hover{transform:none}}
