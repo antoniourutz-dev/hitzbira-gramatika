@@ -305,3 +305,15 @@ nav button {display:flex;flex-direction:column;align-items:center;justify-conten
 @media(max-width:700px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome-bira{padding:6px}.welcome-bira>span{font-size:11px;padding:5px 8px}}
 @media(max-width:440px){.welcome-bira .bira-art{width:120px;transform:translateX(-12px)}.welcome-bira:before{width:105px}.welcome-bira>span{white-space:normal;font-size:10px;padding:5px;text-align:center}.bira-challenge{flex-wrap:wrap;gap:10px;padding:14px}.bira-challenge .bira-art{width:67px}.bira-challenge button{width:100%;justify-content:center}.visual-node{font-size:13px;padding:9px}.visual-row{gap:5px}.visual-link{font-size:16px}.bira-tip .bira-art{width:58px}}
 @media(prefers-reduced-motion:reduce){.welcome-bira .bira-body{animation:none}}
+
+.decl-visual{display:flex;align-items:center;gap:20px;padding:20px;background:#fff;border:1px solid var(--cat-line);border-radius:20px}
+.decl-house{width:115px;flex-shrink:0;padding:8px;border-radius:18px;background:var(--cat-soft)}
+.decl-house svg{width:100%;display:block}
+.decl-visual>div:nth-child(2){flex:1;min-width:0}
+.decl-visual h2{margin:4px 0 10px;font-size:22px}
+.decl-directions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0}
+.decl-directions>div{display:flex;flex-direction:column;gap:3px;padding:9px 12px;background:var(--cat-soft);border-radius:10px}
+.decl-directions strong{font-size:11px;letter-spacing:.7px;color:var(--cat-dark)}
+.decl-directions span{font-size:16px;font-weight:750;overflow-wrap:anywhere}
+.decl-directions b{color:var(--cat-dark)}
+@media(max-width:540px){.decl-visual{padding:14px;gap:12px;align-items:flex-start;flex-direction:column}.decl-house{width:80px}.decl-visual>div:nth-child(2){width:100%}.decl-directions>div{padding:8px}.decl-directions span{font-size:14px}}
