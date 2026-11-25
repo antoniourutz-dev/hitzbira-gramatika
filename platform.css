@@ -1,7 +1,6 @@
 /* Shared HitzBira shell. The verb module is an embedded learning surface, not a second application. */
-.pwa-tools{max-width:1100px;margin:0 auto;padding:7px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:#625b73}.pwa-tools button{background:#eee8fc;color:#4327a0;border:1px solid #e2ddec;min-height:44px;padding:6px 10px;border-radius:12px;font-size:12px}.pwa-help{flex-basis:100%;padding:12px;background:#fff;border:1px solid #e2ddec;border-radius:12px}.pwa-help[hidden],.pwa-tools [hidden]{display:none!important}
 .verb-tools{margin:18px 0}.verb-crosslink{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:16px;margin:14px 0;background:#e0f5ef;border:1px solid #a8dbce;border-radius:18px}.verb-crosslink strong{color:#075c52}.verb-crosslink p{margin:0;flex:1;min-width:180px}.verb-crosslink button,.hb-verb-progress button{background:#087f70;color:#fff;display:inline-flex;align-items:center;gap:7px}.verb-crosslink svg,.hb-verb-progress button svg{width:20px;height:20px}.hb-verb-progress .journey-metrics>div{background:#e0f5ef;border-color:#a8dbce}.hb-verb-progress .journey-metrics strong{color:#075c52}
-@media(max-width:540px){.pwa-tools{padding-inline:14px}.verb-crosslink button{width:100%;justify-content:center}}
+@media(max-width:540px){.verb-crosslink button{width:100%;justify-content:center}}
 
 /* Optional student sign-in, sync status and Bira garden. */
 #hb-login[hidden],.hb-account-bar [hidden],#hb-garden[hidden]{display:none!important}
