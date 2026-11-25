@@ -505,6 +505,8 @@
 .hb-verb-surface .verb-companion{display:flex;align-items:center;gap:10px;color:#625b73;font-size:14px;font-weight:600;margin-bottom:8px}
 .hb-verb-surface .verb-companion .bira-art{width:66px;height:auto}
 .hb-verb-surface .scroll{max-width:100%;overflow:auto}.hb-verb-surface th{background:#e0f5ef;color:#075c52}
+.hb-verb-surface .study-back{display:none}
+.hb-verb-surface .lab-live-result:not(.lab-missing) h2{color:#075c52}
 .hb-verb-surface footer{margin:0}
 .hb-verb-surface .tile-tray .tile{width:auto;height:auto}
 @media(max-width:600px){.hb-verb-surface{gap:10px}.hb-verb-surface .panel{padding:14px}.hb-verb-surface .hub-grid{grid-template-columns:1fr}.hb-verb-surface .quiz-dock{bottom:70px}.hb-verb-surface .quiz-options{grid-template-columns:1fr}.hb-verb-surface .learning-hero .learning-hero-icon{width:80px}.hb-verb-surface .quiz-options .opt{min-height:52px}}
