@@ -23,8 +23,8 @@
 h1[tabindex="-1"]:focus{outline:none}
 @media(min-width:860px){.hb-top-nav{display:flex}nav{display:none!important}main{padding-bottom:48px}.focus-choices>:last-child:nth-child(odd){grid-column:1/-1}}
 
-.hb-login-card{position:relative}.hb-login-card #hb-login-close{position:absolute;right:14px;top:14px;width:40px;height:40px;font-size:22px;padding:4px}.hb-account-bar>div{display:grid;gap:2px;text-align:right}.hb-account-bar #hb-show-login{background:#5b3cc4;color:white}.hb-sync-status{font-size:11px;font-weight:600}.hb-sync-ok{color:#087f70}.hb-sync-pending{color:#966000}.hb-sync-warning{color:#9b2854}.hb-garden{max-width:1056px;margin:10px auto 14px;display:flex;align-items:center;gap:14px;border:1px solid #cfe7db;background:linear-gradient(120deg,#e9f8ef,#faf9ff);border-radius:20px;padding:14px 18px;color:#185a47}.hb-garden-icon{font-size:32px;flex:none}.hb-garden-copy{display:grid;gap:3px;flex:1}.hb-garden-copy .catalog-kicker{color:#087f70;font-size:10px}.hb-garden-copy strong{font-size:16px}.hb-garden-copy small{font-size:11px;color:#42675a}.hb-garden-days{display:flex;gap:5px}.hb-petal{width:27px;height:30px;border:1px dashed #b3d7c2;border-radius:10px;display:grid;place-items:center;color:#7cb297;font-size:19px}.hb-petal.grown{background:#ffdc79;color:#966000;border-color:#f2c95d}.hb-petal.today{outline:2px solid #5b3cc4;outline-offset:2px}@media(max-width:700px){.hb-garden{margin:8px 14px 12px;flex-wrap:wrap;gap:9px}.hb-garden-days{margin-left:42px}.hb-petal{width:24px;height:26px}}
-@media(max-width:500px){#hb-login{padding:16px}.hb-login-card{padding:23px}.hb-account-bar>div{display:none}.hb-brand-link{gap:8px}.hb-account-bar button{padding:6px 10px;font-size:12px}}
+.hb-login-card{position:relative}.hb-login-card #hb-login-close{position:absolute;right:14px;top:14px;width:40px;height:40px;font-size:22px;padding:4px}.hb-account-bar .hb-account-meta{display:grid;gap:2px;text-align:right}.hb-account-bar #hb-show-login{background:#5b3cc4;color:white}.hb-sync-status{font-size:11px;font-weight:600}.hb-sync-ok{color:#087f70}.hb-sync-pending{color:#966000}.hb-sync-warning{color:#9b2854}
+@media(max-width:540px){#hb-login{padding:16px}.hb-login-card{padding:23px}.hb-account-bar .hb-account-meta{display:none}.hb-brand-link{gap:8px}.hb-account-bar{gap:6px}.hb-account-bar button{padding:6px 10px;font-size:12px}}
 
 /* WORLD: same island illustrations, narrative cards, age-neutral visual hierarchy. */
 .hb-world{margin:22px 0;padding:20px;border:1px solid #ded8ee;border-radius:24px;background:#f8f6ff;color:#30205b}
@@ -255,6 +255,60 @@ html[data-theme="dark"] .hb-verb-surface .verb-subtabs button.active{background:
 html[data-theme="dark"] .journey-hero-unified .journey-hero-next{background:rgba(28,25,46,.82);border-color:#3e3761}
 html[data-theme="dark"] .journey-hero-next small{color:#c5b6ff}
 html[data-theme="dark"] .journey-hero-next strong{color:#f3f1fc}
-@media(prefers-reduced-motion:reduce){.hb-slot.filled,.lesson-panel{animation:none!important}}
+/* 2.1.0 · Integrated HitzBira Streak Flame pill & 7-day popover */
+.hb-streak-wrap{position:relative;display:inline-flex;align-items:center}
+.hb-streak-btn{display:inline-flex;align-items:center;gap:5px;min-height:40px;padding:6px 11px;border-radius:12px;background:#f4f1fc;border:1px solid #e1dbf2;color:#62567c;font-weight:800;font-size:14px;font-variant-numeric:tabular-nums;transition:transform .15s ease,background-color .18s ease,border-color .18s ease}
+.hb-streak-btn:hover{background:#ece6fb;border-color:#cfc4ec;filter:none}
+.hb-streak-btn.warm{background:#fff8e8;border-color:#efd69b;color:#8a5600}
+.hb-streak-btn.lit{background:linear-gradient(135deg,#fff6d6,#ffe9b0);border-color:#f0be59;color:#7a4300;box-shadow:0 2px 10px rgba(245,166,35,.18)}
+.hb-flame-ico{width:19px;height:19px;display:block;flex:none;overflow:visible}
+.hb-flame-ico .fl-outer{fill:#d7d0ea;stroke:#786c96;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round;transition:fill .2s ease,stroke .2s ease}
+.hb-flame-ico .fl-core{fill:#f4f1fc;transition:fill .2s ease}
+.hb-streak-btn.warm .fl-outer{fill:#ffdf7d;stroke:#8a5600}
+.hb-streak-btn.warm .fl-core{fill:#fff8dc}
+.hb-streak-btn.lit .fl-outer,.hb-streak-pop.lit .hb-streak-badge .fl-outer,.hb-day-cell.lit .fl-outer{fill:#ff9c3b;stroke:#34204f}
+.hb-streak-btn.lit .fl-core,.hb-streak-pop.lit .hb-streak-badge .fl-core,.hb-day-cell.lit .fl-core{fill:#ffe88a}
+.hb-streak-pop{position:absolute;top:calc(100% + 10px);right:0;width:310px;padding:16px;background:#fff;border:1px solid #e2dced;border-radius:20px;box-shadow:0 16px 42px rgba(33,28,56,.16);z-index:50;text-align:left;color:#211c38;animation:hb-pop .16s ease-out}
+@keyframes hb-pop{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+.hb-streak-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.hb-streak-badge{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:#f4f1fc;border:1px solid #e2dced;flex:none}
+.hb-streak-pop.lit .hb-streak-badge{background:linear-gradient(145deg,#fff5d1,#ffe394);border-color:#f0be59}
+.hb-streak-badge .hb-flame-ico{width:27px;height:27px}
+.hb-streak-head .catalog-kicker{font-size:10px;color:#5b3cc4;letter-spacing:.08em}
+.hb-streak-head strong{display:block;font-size:17px;line-height:1.2;margin:2px 0;color:#211c38}
+.hb-streak-head small{display:block;font-size:12px;color:#625b73}
+.hb-streak-days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:10px 8px;background:#f8f6fd;border:1px solid #ece7f6;border-radius:14px}
+.hb-day-cell{display:flex;flex-direction:column;align-items:center;gap:5px}
+.hb-day-cell small{font-size:11px;font-weight:700;color:#786f8c}
+.hb-day-cell.today small{color:#5b3cc4}
+.hb-day-dot{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid #e4dff1}
+.hb-day-dot i{width:6px;height:6px;border-radius:50%;background:#d6cee8;display:block}
+.hb-day-cell.lit .hb-day-dot{background:linear-gradient(145deg,#fff5d1,#ffe18c);border-color:#f0be59}
+.hb-day-cell.today .hb-day-dot{outline:2px solid #5b3cc4;outline-offset:2px}
+.hb-flame-mini{width:17px;height:17px;display:block}
+.hb-flame-mini .fl-outer{stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.hb-streak-foot{margin:11px 0 0;font-size:12px;line-height:1.45;color:#625b73}
+@media(max-width:540px){.hb-streak-btn{padding:6px 9px;min-height:38px;font-size:13px}.hb-streak-pop{position:fixed;top:66px;left:12px;right:12px;width:auto}}
+@media(max-width:380px){.hb-common-header>div{padding:10px 10px;gap:6px}.hb-common-header .logo{width:34px;height:34px;padding:3px;border-radius:10px}.hb-common-header .brand{font-size:18px}.hb-common-header .brand small{font-size:8px;letter-spacing:1.2px}.hb-streak-btn{padding:4px 7px;gap:3px;font-size:12px}.hb-theme-btn{width:36px;min-width:36px;padding:0}.hb-account-bar{gap:5px}.hb-account-bar button{padding:5px 8px;font-size:11px}}
+html[data-theme="dark"] .hb-streak-btn{background:#231f3a;border-color:#3a335e;color:#b7b0ce}
+html[data-theme="dark"] .hb-streak-btn:hover{background:#2d284a}
+html[data-theme="dark"] .hb-streak-btn .fl-outer{fill:#3a335e;stroke:#988ec2}
+html[data-theme="dark"] .hb-streak-btn .fl-core{fill:#231f3a}
+html[data-theme="dark"] .hb-streak-btn.warm{background:#332614;border-color:#876123;color:#ffdc79}
+html[data-theme="dark"] .hb-streak-btn.lit{background:linear-gradient(135deg,#473011,#5c3a10);border-color:#d99b38;color:#ffe48f;box-shadow:0 2px 12px rgba(245,166,35,.22)}
+html[data-theme="dark"] .hb-streak-btn.lit .fl-outer,html[data-theme="dark"] .hb-streak-pop.lit .hb-streak-badge .fl-outer,html[data-theme="dark"] .hb-day-cell.lit .fl-outer{fill:#ff9c3b;stroke:#241538}
+html[data-theme="dark"] .hb-streak-pop{background:#1c192e;border-color:#3a335e;color:#f3f1fc;box-shadow:0 18px 46px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hb-streak-badge{background:#262140;border-color:#3d3663}
+html[data-theme="dark"] .hb-streak-pop.lit .hb-streak-badge{background:linear-gradient(145deg,#4d3411,#633e10);border-color:#d99b38}
+html[data-theme="dark"] .hb-streak-head .catalog-kicker{color:#b5a2ff}
+html[data-theme="dark"] .hb-streak-head strong{color:#f3f1fc}
+html[data-theme="dark"] .hb-streak-head small,html[data-theme="dark"] .hb-streak-foot{color:#b7b0ce}
+html[data-theme="dark"] .hb-streak-days{background:#151225;border-color:#302a4d}
+html[data-theme="dark"] .hb-day-dot{background:#211c38;border-color:#38315c}
+html[data-theme="dark"] .hb-day-dot i{background:#4f477a}
+html[data-theme="dark"] .hb-day-cell.lit .hb-day-dot{background:linear-gradient(145deg,#523612,#6e4512);border-color:#d99b38}
+html[data-theme="dark"] .hb-day-cell.today small{color:#c5b6ff}
+html[data-theme="dark"] .hb-day-cell.today .hb-day-dot{outline-color:#9b87ff}
+@media(prefers-reduced-motion:reduce){.hb-slot.filled,.lesson-panel,.hb-streak-pop{animation:none!important}}
 
 
