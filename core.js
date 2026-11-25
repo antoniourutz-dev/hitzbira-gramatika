@@ -69,3 +69,31 @@ function createAdaptive(curriculum){
  return Object.freeze({policy,profile,planFor,pick});
 }
 window.HitzBiraAdaptive=createAdaptive(window.HitzBiraCurriculum);
+
+/* P1.03: local, account-keyed practice agenda; not evidence or server synchronization. */
+function createSpaced(curriculum){
+ const policy="HB-ADAPT-001/0.1.0-agenda-p1.03",days=Object.freeze([1,3,7,14,30]),DAY=86400000;
+ const validTime=x=>Number.isSafeInteger(x)&&x>0&&x<=8640000000000000-30*DAY;
+ const targets=curriculum.nodes.flatMap(n=>{const r=curriculum.route(n.id);return r?[...r.refs.map(key=>({node:n.id,key,kind:"item",version:n.vid})),...r.lessons.map(key=>({node:n.id,key,kind:"lesson",version:n.vid}))]:[]});
+ const byKey=new Map(targets.map(t=>[t.key,t]));
+ const clean=(key,v)=>{const t=byKey.get(key);return !!(t&&v&&v.policy===policy&&v.version===t.version&&Number.isInteger(v.step)&&v.step>=0&&v.step<days.length&&validTime(v.at)&&validTime(v.due)&&v.due>=v.at+DAY&&typeof v.session==="string"&&v.session.length>0&&typeof v.event==="string"&&v.event.length>0)};
+ const record=(state,event)=>{const t=byKey.get(event?.key),at=event?.at;if(!t||!validTime(at)||typeof event.session!=="string"||!event.session||typeof event.id!=="string"||!event.id||!["match","mismatch","unverified","exposure"].includes(event.result))return state;const prev=clean(t.key,state?.[t.key])?state[t.key]:null;if(prev&&(event.id===prev.event||at<prev.at))return state;
+ const due=!!prev&&at>=prev.due&&at-prev.at>=DAY&&prev.session!==event.session;
+ const success=event.result==="match"&&event.written===true&&event.assisted===false;
+ let step=prev?.step??0,reason="initial",delay=days[step];
+ if(success&&due){step=Math.min(step+1,days.length-1);delay=days[step];reason="delayed_model_match"}else if(event.result==="mismatch"){step=0;delay=1;reason="practice_review"}else if(event.result==="unverified"){delay=1;reason="compare_pending"}else if(event.result==="exposure"||!success){delay=1;reason="practice_exposure"}else if(prev){reason="early_model_match";delay=days[step]}
+ return {...state,[t.key]:{policy,version:t.version,step,at,due:at+delay*DAY,session:event.session,event:event.id,reason}};
+ };
+ const agenda=(state,now=Date.now(),scope=null)=>targets.filter(t=>!scope||scope.includes(curriculum.route(t.node).family)).filter(t=>clean(t.key,state?.[t.key])).map(t=>({...t,...state[t.key],interval:days[state[t.key].step],status:state[t.key].due<=now?"due":"scheduled"})).sort((a,b)=>a.due-b.due||curriculum.get(a.node).ord-curriculum.get(b.node).ord||a.key.localeCompare(b.key));
+ const plan=(state,input={},node=null,key=null)=>{const now=input.now??Date.now(),rows=agenda(state,now,input.scope).filter(r=>r.status==="due"&&(!node||r.node===node)&&(!key||r.key===key));if(!rows.length)return null;const first=rows[0],route=curriculum.route(first.node);return Object.freeze({type:"curriculum",node:first.node,family:route.family,id:first.kind==="item"?first.key:null,lesson:first.kind==="lesson"?first.key:null,phase:first.kind==="lesson"?"recall":null,refs:Object.freeze(first.kind==="item"?[first.key]:[]),exerciseMode:first.kind==="item"?"write":"lesson",intent:"spaced",title:"Gogoratzeko unea · "+first.node,why:"Programatutako praktika berriro egin, aukerarik gabe. Ez da ahaztu izanaren edo gaitasunaren froga.",policy,mode:"practice_only",academicEvidence:false,capabilityVersion:first.version,due:first.due})};
+ return Object.freeze({policy,days,record,agenda,plan,has:key=>byKey.has(key)});
+}
+function createSpacedStore(api,data,storage,clock=()=>Date.now(),newId=()=>crypto.randomUUID()){
+ const key=()=>data.keyFor("hitzbira-curriculum-spaced-v1"),sessions=new WeakMap();let warning=false;
+ const read=()=>{try{const raw=storage.getItem(key());const v=raw?JSON.parse(raw):{};if(!v||typeof v!=="object"||Array.isArray(v))throw Error("agenda");return v}catch{warning=true;return {}}};
+ const session=token=>{if(!token||typeof token!=="object")return newId();if(!sessions.has(token))sessions.set(token,newId());return sessions.get(token)};
+ const observe=(k,result,written,assisted,token)=>{if(!api.has(k))return false;try{const old=read(),next=api.record(old,{key:k,result,written,assisted,session:session(token),id:newId(),at:clock()});if(next!==old)storage.setItem(key(),JSON.stringify(next));return next!==old}catch{warning=true;return false}};
+ return Object.freeze({read,observe,agenda:(input={})=>api.agenda(read(),input.now??clock(),input.scope),plan:(input={},node=null,k=null)=>api.plan(read(),{...input,now:input.now??clock()},node,k),clear:()=>{try{storage.removeItem(key());warning=false}catch{warning=true}},warning:()=>warning});
+}
+window.HitzBiraSpaced=createSpaced(window.HitzBiraCurriculum);
+if(window.HBData&&typeof localStorage!=="undefined")window.HitzBiraAgenda=createSpacedStore(window.HitzBiraSpaced,window.HBData,localStorage);
