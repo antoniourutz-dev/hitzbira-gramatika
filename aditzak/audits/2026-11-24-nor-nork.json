@@ -1,0 +1,838 @@
+{
+  "version": "0.9.7",
+  "scope": "NOR-NORK · egungo 11 blokeak",
+  "reference": "https://www.euskaltzaindia.eus/dok/euskera/11616.pdf",
+  "reference78": "https://www.euskaltzaindia.eus/dok/euskera/49561.pdf",
+  "sourcePages": "37–51",
+  "method": "Explicit transcription from the retrieved 1973 source text; some entries cross-checked against 1997/78 rule text. Page-image retrieval failed. No claim of independent visual certification.",
+  "before": 292,
+  "after": 420,
+  "counts": [
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    20
+  ],
+  "matched": 289,
+  "added": [
+    {
+      "id": "2|5|ni|hik (toka)",
+      "form": "nazakek"
+    },
+    {
+      "id": "2|5|ni|hik (noka)",
+      "form": "nazaken"
+    },
+    {
+      "id": "2|5|ni|hark",
+      "form": "nazake"
+    },
+    {
+      "id": "2|5|ni|zuk",
+      "form": "nazakezu"
+    },
+    {
+      "id": "2|5|ni|zuek",
+      "form": "nazakezue"
+    },
+    {
+      "id": "2|5|ni|haiek",
+      "form": "nazakete"
+    },
+    {
+      "id": "2|6|ni|hik (toka)",
+      "form": "nintzakean"
+    },
+    {
+      "id": "2|6|ni|hik (noka)",
+      "form": "nintzakenan"
+    },
+    {
+      "id": "2|6|ni|hark",
+      "form": "nintzakeen"
+    },
+    {
+      "id": "2|6|ni|zuk",
+      "form": "nintzakezun"
+    },
+    {
+      "id": "2|6|ni|zuek",
+      "form": "nintzakezuen"
+    },
+    {
+      "id": "2|6|ni|haiek",
+      "form": "nintzaketen"
+    },
+    {
+      "id": "2|7|ni|hik (toka)",
+      "form": "nintzakek"
+    },
+    {
+      "id": "2|7|ni|hik (noka)",
+      "form": "nintzaken"
+    },
+    {
+      "id": "2|7|ni|hark",
+      "form": "nintzake"
+    },
+    {
+      "id": "2|7|ni|zuk",
+      "form": "nintzakezu"
+    },
+    {
+      "id": "2|7|ni|zuek",
+      "form": "nintzakezue"
+    },
+    {
+      "id": "2|7|ni|haiek",
+      "form": "nintzakete"
+    },
+    {
+      "id": "2|8|ni|hik (toka)",
+      "form": "nazaan"
+    },
+    {
+      "id": "2|8|ni|hik (noka)",
+      "form": "nazanan"
+    },
+    {
+      "id": "2|8|ni|hark",
+      "form": "nazan"
+    },
+    {
+      "id": "2|8|ni|zuk",
+      "form": "nazazun"
+    },
+    {
+      "id": "2|8|ni|zuek",
+      "form": "nazazuen"
+    },
+    {
+      "id": "2|8|ni|haiek",
+      "form": "nazaten"
+    },
+    {
+      "id": "2|9|ni|hik (toka)",
+      "form": "nintzaan"
+    },
+    {
+      "id": "2|9|ni|hik (noka)",
+      "form": "nintzanan"
+    },
+    {
+      "id": "2|9|ni|hark",
+      "form": "nintzan"
+    },
+    {
+      "id": "2|9|ni|zuk",
+      "form": "nintzazun"
+    },
+    {
+      "id": "2|9|ni|zuek",
+      "form": "nintzazuen"
+    },
+    {
+      "id": "2|9|ni|haiek",
+      "form": "nintzaten"
+    },
+    {
+      "id": "2|10|ni|hik (toka)",
+      "form": "nazak"
+    },
+    {
+      "id": "2|10|ni|hik (noka)",
+      "form": "nazan"
+    },
+    {
+      "id": "2|10|ni|zuk",
+      "form": "nazazu"
+    },
+    {
+      "id": "2|10|ni|zuek",
+      "form": "nazazue"
+    },
+    {
+      "id": "2|5|hi|nik",
+      "form": "hazaket"
+    },
+    {
+      "id": "2|5|hi|hark",
+      "form": "hazake"
+    },
+    {
+      "id": "2|5|hi|guk",
+      "form": "hazakegu"
+    },
+    {
+      "id": "2|5|hi|haiek",
+      "form": "hazakete"
+    },
+    {
+      "id": "2|6|hi|nik",
+      "form": "hintzakedan"
+    },
+    {
+      "id": "2|6|hi|hark",
+      "form": "hintzakeen"
+    },
+    {
+      "id": "2|6|hi|guk",
+      "form": "hintzakegun"
+    },
+    {
+      "id": "2|6|hi|haiek",
+      "form": "hintzaketen"
+    },
+    {
+      "id": "2|7|hi|nik",
+      "form": "hintzaket"
+    },
+    {
+      "id": "2|7|hi|hark",
+      "form": "hintzake"
+    },
+    {
+      "id": "2|7|hi|guk",
+      "form": "hintzakegu"
+    },
+    {
+      "id": "2|7|hi|haiek",
+      "form": "hintzakete"
+    },
+    {
+      "id": "2|8|hi|nik",
+      "form": "hazadan"
+    },
+    {
+      "id": "2|8|hi|hark",
+      "form": "hazan"
+    },
+    {
+      "id": "2|8|hi|guk",
+      "form": "hazagun"
+    },
+    {
+      "id": "2|8|hi|haiek",
+      "form": "hazaten"
+    },
+    {
+      "id": "2|9|hi|nik",
+      "form": "hintzadan"
+    },
+    {
+      "id": "2|9|hi|hark",
+      "form": "hintzan"
+    },
+    {
+      "id": "2|9|hi|guk",
+      "form": "hintzagun"
+    },
+    {
+      "id": "2|9|hi|haiek",
+      "form": "hintzaten"
+    },
+    {
+      "id": "2|5|gu|hik (toka)",
+      "form": "gaitzakek"
+    },
+    {
+      "id": "2|5|gu|hik (noka)",
+      "form": "gaitzaken"
+    },
+    {
+      "id": "2|5|gu|hark",
+      "form": "gaitzake"
+    },
+    {
+      "id": "2|5|gu|zuk",
+      "form": "gaitzakezu"
+    },
+    {
+      "id": "2|5|gu|zuek",
+      "form": "gaitzakezue"
+    },
+    {
+      "id": "2|5|gu|haiek",
+      "form": "gaitzakete"
+    },
+    {
+      "id": "2|6|gu|hik (toka)",
+      "form": "gintzakean"
+    },
+    {
+      "id": "2|6|gu|hik (noka)",
+      "form": "gintzakenan"
+    },
+    {
+      "id": "2|6|gu|hark",
+      "form": "gintzakeen"
+    },
+    {
+      "id": "2|6|gu|zuk",
+      "form": "gintzakezun"
+    },
+    {
+      "id": "2|6|gu|zuek",
+      "form": "gintzakezuen"
+    },
+    {
+      "id": "2|6|gu|haiek",
+      "form": "gintzaketen"
+    },
+    {
+      "id": "2|7|gu|hik (toka)",
+      "form": "gintzakek"
+    },
+    {
+      "id": "2|7|gu|hik (noka)",
+      "form": "gintzaken"
+    },
+    {
+      "id": "2|7|gu|hark",
+      "form": "gintzake"
+    },
+    {
+      "id": "2|7|gu|zuk",
+      "form": "gintzakezu"
+    },
+    {
+      "id": "2|7|gu|zuek",
+      "form": "gintzakezue"
+    },
+    {
+      "id": "2|7|gu|haiek",
+      "form": "gintzakete"
+    },
+    {
+      "id": "2|8|gu|hik (toka)",
+      "form": "gaitzaan"
+    },
+    {
+      "id": "2|8|gu|hik (noka)",
+      "form": "gaitzanan"
+    },
+    {
+      "id": "2|8|gu|hark",
+      "form": "gaitzan"
+    },
+    {
+      "id": "2|8|gu|zuk",
+      "form": "gaitzazun"
+    },
+    {
+      "id": "2|8|gu|zuek",
+      "form": "gaitzazuen"
+    },
+    {
+      "id": "2|8|gu|haiek",
+      "form": "gaitzaten"
+    },
+    {
+      "id": "2|9|gu|hik (toka)",
+      "form": "gintzaan"
+    },
+    {
+      "id": "2|9|gu|hik (noka)",
+      "form": "gintzanan"
+    },
+    {
+      "id": "2|9|gu|hark",
+      "form": "gintzan"
+    },
+    {
+      "id": "2|9|gu|zuk",
+      "form": "gintzazun"
+    },
+    {
+      "id": "2|9|gu|zuek",
+      "form": "gintzazuen"
+    },
+    {
+      "id": "2|9|gu|haiek",
+      "form": "gintzaten"
+    },
+    {
+      "id": "2|10|gu|hik (toka)",
+      "form": "gaitzak"
+    },
+    {
+      "id": "2|10|gu|hik (noka)",
+      "form": "gaitzan"
+    },
+    {
+      "id": "2|10|gu|zuk",
+      "form": "gaitzazu"
+    },
+    {
+      "id": "2|10|gu|zuek",
+      "form": "gaitzazue"
+    },
+    {
+      "id": "2|5|zu|nik",
+      "form": "zaitzaket"
+    },
+    {
+      "id": "2|5|zu|hark",
+      "form": "zaitzake"
+    },
+    {
+      "id": "2|5|zu|guk",
+      "form": "zaitzakegu"
+    },
+    {
+      "id": "2|5|zu|haiek",
+      "form": "zaitzakete"
+    },
+    {
+      "id": "2|6|zu|nik",
+      "form": "zintzakedan"
+    },
+    {
+      "id": "2|6|zu|hark",
+      "form": "zintzakeen"
+    },
+    {
+      "id": "2|6|zu|guk",
+      "form": "zintzakegun"
+    },
+    {
+      "id": "2|6|zu|haiek",
+      "form": "zintzaketen"
+    },
+    {
+      "id": "2|7|zu|nik",
+      "form": "zintzaket"
+    },
+    {
+      "id": "2|7|zu|hark",
+      "form": "zintzake"
+    },
+    {
+      "id": "2|7|zu|guk",
+      "form": "zintzakegu"
+    },
+    {
+      "id": "2|7|zu|haiek",
+      "form": "zintzakete"
+    },
+    {
+      "id": "2|8|zu|nik",
+      "form": "zaitzadan"
+    },
+    {
+      "id": "2|8|zu|hark",
+      "form": "zaitzan"
+    },
+    {
+      "id": "2|8|zu|guk",
+      "form": "zaitzagun"
+    },
+    {
+      "id": "2|8|zu|haiek",
+      "form": "zaitzaten"
+    },
+    {
+      "id": "2|9|zu|nik",
+      "form": "zintzadan"
+    },
+    {
+      "id": "2|9|zu|hark",
+      "form": "zintzan"
+    },
+    {
+      "id": "2|9|zu|guk",
+      "form": "zintzagun"
+    },
+    {
+      "id": "2|9|zu|haiek",
+      "form": "zintzaten"
+    },
+    {
+      "id": "2|5|zuek|nik",
+      "form": "zaitzaketet"
+    },
+    {
+      "id": "2|5|zuek|hark",
+      "form": "zaitzakete"
+    },
+    {
+      "id": "2|5|zuek|guk",
+      "form": "zaitzaketegu"
+    },
+    {
+      "id": "2|5|zuek|haiek",
+      "form": "zaitzakete"
+    },
+    {
+      "id": "2|6|zuek|nik",
+      "form": "zintzaketedan"
+    },
+    {
+      "id": "2|6|zuek|hark",
+      "form": "zintzaketen"
+    },
+    {
+      "id": "2|6|zuek|guk",
+      "form": "zintzaketegun"
+    },
+    {
+      "id": "2|6|zuek|haiek",
+      "form": "zintzaketen"
+    },
+    {
+      "id": "2|7|zuek|nik",
+      "form": "zintzaketet"
+    },
+    {
+      "id": "2|7|zuek|hark",
+      "form": "zintzakete"
+    },
+    {
+      "id": "2|7|zuek|guk",
+      "form": "zintzaketegu"
+    },
+    {
+      "id": "2|7|zuek|haiek",
+      "form": "zintzakete"
+    },
+    {
+      "id": "2|8|zuek|nik",
+      "form": "zaitzatedan"
+    },
+    {
+      "id": "2|8|zuek|hark",
+      "form": "zaitzaten"
+    },
+    {
+      "id": "2|8|zuek|guk",
+      "form": "zaitzategun"
+    },
+    {
+      "id": "2|8|zuek|haiek",
+      "form": "zaitzaten"
+    },
+    {
+      "id": "2|9|zuek|nik",
+      "form": "zintzatedan"
+    },
+    {
+      "id": "2|9|zuek|hark",
+      "form": "zintzaten"
+    },
+    {
+      "id": "2|9|zuek|guk",
+      "form": "zintzategun"
+    },
+    {
+      "id": "2|9|zuek|haiek",
+      "form": "zintzaten"
+    }
+  ],
+  "changed": [
+    {
+      "id": "2|8|hura|hik (toka)",
+      "from": "dezakan",
+      "to": "dezaan"
+    },
+    {
+      "id": "2|4|gu|zuek",
+      "from": "gintuzkezueen",
+      "to": "gintuzkezuen"
+    },
+    {
+      "id": "2|8|haiek|hik (toka)",
+      "from": "ditzakan",
+      "to": "ditzaan"
+    }
+  ],
+  "variants": [
+    {
+      "id": "2|5|zuek|haiek",
+      "from": [],
+      "to": [
+        "zaitzaketete"
+      ]
+    },
+    {
+      "id": "2|6|zuek|haiek",
+      "from": [],
+      "to": [
+        "zintzaketeten"
+      ]
+    },
+    {
+      "id": "2|7|zuek|haiek",
+      "from": [],
+      "to": [
+        "zintzaketete"
+      ]
+    },
+    {
+      "id": "2|8|zuek|haiek",
+      "from": [],
+      "to": [
+        "zaitzateten"
+      ]
+    },
+    {
+      "id": "2|9|zuek|haiek",
+      "from": [],
+      "to": [
+        "zintzateten"
+      ]
+    }
+  ],
+  "blankKeys": [
+    "2|0|ni|nik",
+    "2|0|ni|guk",
+    "2|1|ni|nik",
+    "2|1|ni|guk",
+    "2|2|ni|nik",
+    "2|2|ni|guk",
+    "2|3|ni|nik",
+    "2|3|ni|guk",
+    "2|4|ni|nik",
+    "2|4|ni|guk",
+    "2|5|ni|nik",
+    "2|5|ni|guk",
+    "2|6|ni|nik",
+    "2|6|ni|guk",
+    "2|7|ni|nik",
+    "2|7|ni|guk",
+    "2|8|ni|nik",
+    "2|8|ni|guk",
+    "2|9|ni|nik",
+    "2|9|ni|guk",
+    "2|10|ni|nik",
+    "2|10|ni|hark",
+    "2|10|ni|guk",
+    "2|10|ni|haiek",
+    "2|0|hi|hik (toka)",
+    "2|0|hi|hik (noka)",
+    "2|0|hi|zuk",
+    "2|0|hi|zuek",
+    "2|1|hi|hik (toka)",
+    "2|1|hi|hik (noka)",
+    "2|1|hi|zuk",
+    "2|1|hi|zuek",
+    "2|2|hi|hik (toka)",
+    "2|2|hi|hik (noka)",
+    "2|2|hi|zuk",
+    "2|2|hi|zuek",
+    "2|3|hi|hik (toka)",
+    "2|3|hi|hik (noka)",
+    "2|3|hi|zuk",
+    "2|3|hi|zuek",
+    "2|4|hi|hik (toka)",
+    "2|4|hi|hik (noka)",
+    "2|4|hi|zuk",
+    "2|4|hi|zuek",
+    "2|5|hi|hik (toka)",
+    "2|5|hi|hik (noka)",
+    "2|5|hi|zuk",
+    "2|5|hi|zuek",
+    "2|6|hi|hik (toka)",
+    "2|6|hi|hik (noka)",
+    "2|6|hi|zuk",
+    "2|6|hi|zuek",
+    "2|7|hi|hik (toka)",
+    "2|7|hi|hik (noka)",
+    "2|7|hi|zuk",
+    "2|7|hi|zuek",
+    "2|8|hi|hik (toka)",
+    "2|8|hi|hik (noka)",
+    "2|8|hi|zuk",
+    "2|8|hi|zuek",
+    "2|9|hi|hik (toka)",
+    "2|9|hi|hik (noka)",
+    "2|9|hi|zuk",
+    "2|9|hi|zuek",
+    "2|10|hi|nik",
+    "2|10|hi|hik (toka)",
+    "2|10|hi|hik (noka)",
+    "2|10|hi|hark",
+    "2|10|hi|guk",
+    "2|10|hi|zuk",
+    "2|10|hi|zuek",
+    "2|10|hi|haiek",
+    "2|10|hura|nik",
+    "2|10|hura|guk",
+    "2|0|gu|nik",
+    "2|0|gu|guk",
+    "2|1|gu|nik",
+    "2|1|gu|guk",
+    "2|2|gu|nik",
+    "2|2|gu|guk",
+    "2|3|gu|nik",
+    "2|3|gu|guk",
+    "2|4|gu|nik",
+    "2|4|gu|guk",
+    "2|5|gu|nik",
+    "2|5|gu|guk",
+    "2|6|gu|nik",
+    "2|6|gu|guk",
+    "2|7|gu|nik",
+    "2|7|gu|guk",
+    "2|8|gu|nik",
+    "2|8|gu|guk",
+    "2|9|gu|nik",
+    "2|9|gu|guk",
+    "2|10|gu|nik",
+    "2|10|gu|hark",
+    "2|10|gu|guk",
+    "2|10|gu|haiek",
+    "2|0|zu|hik (toka)",
+    "2|0|zu|hik (noka)",
+    "2|0|zu|zuk",
+    "2|0|zu|zuek",
+    "2|1|zu|hik (toka)",
+    "2|1|zu|hik (noka)",
+    "2|1|zu|zuk",
+    "2|1|zu|zuek",
+    "2|2|zu|hik (toka)",
+    "2|2|zu|hik (noka)",
+    "2|2|zu|zuk",
+    "2|2|zu|zuek",
+    "2|3|zu|hik (toka)",
+    "2|3|zu|hik (noka)",
+    "2|3|zu|zuk",
+    "2|3|zu|zuek",
+    "2|4|zu|hik (toka)",
+    "2|4|zu|hik (noka)",
+    "2|4|zu|zuk",
+    "2|4|zu|zuek",
+    "2|5|zu|hik (toka)",
+    "2|5|zu|hik (noka)",
+    "2|5|zu|zuk",
+    "2|5|zu|zuek",
+    "2|6|zu|hik (toka)",
+    "2|6|zu|hik (noka)",
+    "2|6|zu|zuk",
+    "2|6|zu|zuek",
+    "2|7|zu|hik (toka)",
+    "2|7|zu|hik (noka)",
+    "2|7|zu|zuk",
+    "2|7|zu|zuek",
+    "2|8|zu|hik (toka)",
+    "2|8|zu|hik (noka)",
+    "2|8|zu|zuk",
+    "2|8|zu|zuek",
+    "2|9|zu|hik (toka)",
+    "2|9|zu|hik (noka)",
+    "2|9|zu|zuk",
+    "2|9|zu|zuek",
+    "2|10|zu|nik",
+    "2|10|zu|hik (toka)",
+    "2|10|zu|hik (noka)",
+    "2|10|zu|hark",
+    "2|10|zu|guk",
+    "2|10|zu|zuk",
+    "2|10|zu|zuek",
+    "2|10|zu|haiek",
+    "2|0|zuek|hik (toka)",
+    "2|0|zuek|hik (noka)",
+    "2|0|zuek|zuk",
+    "2|0|zuek|zuek",
+    "2|1|zuek|hik (toka)",
+    "2|1|zuek|hik (noka)",
+    "2|1|zuek|zuk",
+    "2|1|zuek|zuek",
+    "2|2|zuek|hik (toka)",
+    "2|2|zuek|hik (noka)",
+    "2|2|zuek|zuk",
+    "2|2|zuek|zuek",
+    "2|3|zuek|hik (toka)",
+    "2|3|zuek|hik (noka)",
+    "2|3|zuek|zuk",
+    "2|3|zuek|zuek",
+    "2|4|zuek|hik (toka)",
+    "2|4|zuek|hik (noka)",
+    "2|4|zuek|zuk",
+    "2|4|zuek|zuek",
+    "2|5|zuek|hik (toka)",
+    "2|5|zuek|hik (noka)",
+    "2|5|zuek|zuk",
+    "2|5|zuek|zuek",
+    "2|6|zuek|hik (toka)",
+    "2|6|zuek|hik (noka)",
+    "2|6|zuek|zuk",
+    "2|6|zuek|zuek",
+    "2|7|zuek|hik (toka)",
+    "2|7|zuek|hik (noka)",
+    "2|7|zuek|zuk",
+    "2|7|zuek|zuek",
+    "2|8|zuek|hik (toka)",
+    "2|8|zuek|hik (noka)",
+    "2|8|zuek|zuk",
+    "2|8|zuek|zuek",
+    "2|9|zuek|hik (toka)",
+    "2|9|zuek|hik (noka)",
+    "2|9|zuek|zuk",
+    "2|9|zuek|zuek",
+    "2|10|zuek|nik",
+    "2|10|zuek|hik (toka)",
+    "2|10|zuek|hik (noka)",
+    "2|10|zuek|hark",
+    "2|10|zuek|guk",
+    "2|10|zuek|zuk",
+    "2|10|zuek|zuek",
+    "2|10|zuek|haiek",
+    "2|10|haiek|nik",
+    "2|10|haiek|guk"
+  ],
+  "contextualNotes": [
+    {
+      "scope": "B5",
+      "ids": [
+        "2|9|hura|hark",
+        "2|9|hura|haiek",
+        "2|9|haiek|hark",
+        "2|9|haiek|haiek"
+      ],
+      "forms": [
+        "lezan",
+        "lezaten",
+        "litzan",
+        "litzaten"
+      ],
+      "note": "Iturriak alegiazko testuinguruko aldaerak ere jasotzen ditu; iraganaren ariketetan ez dira automatikoki onartzen."
+    },
+    {
+      "scope": "C",
+      "forms": [
+        "euk",
+        "eun",
+        "beu",
+        "euzu",
+        "euzue",
+        "beute",
+        "ituk",
+        "itun",
+        "bitu",
+        "ituzu",
+        "ituzue",
+        "bituzte"
+      ],
+      "note": "1973ko C oharrean aipatutako formak. 78. arauaren eta izartxoen interpretazioa egiaztatu behar da ikasleari aukera gisa aurkeztu aurretik."
+    },
+    {
+      "scope": "A2, A4, B6, B5, C",
+      "note": "Egungo 11 blokeetatik kanpoko paradigmak eta aginterako parentesi arteko oinarriak ez dira adizki oso gisa gehitu."
+    }
+  ],
+  "status": "text_checked_not_certified",
+  "tests": [
+    "all 420 reference keys present",
+    "no duplicate IDs",
+    "all previous IDs retained",
+    "unrelated systems byte-equivalent",
+    "JavaScript syntax"
+  ]
+}
