@@ -31,20 +31,21 @@ const visualMaps={
  "HB06-hel-01":{q:"Zertarako?",rows:[["liburutegira joan","ikasteko"]]},
  "HB06-bal-01":{q:"Baldintza eta ondorioa",rows:[["Euria egiten badu","etxean geratuko gara"]]},
  "HB07-kon-1":{q:"Oztopoa eta ekintza",rows:[["Nahiz eta euria egin duen","kalera joan gara"]]},
- "HB07-kop-1":{q:"Alderatu",rows:[["altua","altuagoa"]]},
+ "HB07-kop-1":{q:"Alderatu",rows:[["altua","ezaugarria"],["altuagoa","konparazioa"]]},
  "HB07-ond-1":{q:"Intentsitatea eta ondorioa",rows:[["Hain hotz zegoen","ura izoztu baitzen"]]},
  "HB07-err-1":{q:"NOR",rows:[["Ane","etorri da"],["Lagunak","etorri dira"]]},
- "HB07-mod-1":{q:"Nahia eta beharra",rows:[["nahi dut","behar dut"]]},
+ "HB07-mod-1":{q:"Nahia eta beharra",rows:[["nahi dut","nahia"],["behar dut","beharra"]]},
  "HB08-pos-01":{q:"Hizpidea",rows:[["kirolari","buruz","Kirolari buruz hitz egin dugu."]]},
  "HB08-jos-01":{q:"Ordena arrunt bat",rows:[["Anek","liburua","irakurri du"]]},
  "HB08-lok-01":{q:"Ideiak lotu",rows:[["eta","emendioa"],["edo","hautaketa"]]},
  "HB08-ort-01":{q:"Esaldiaren muga",rows:[["Etxera joan naiz.","Gero, afaldu dut."]]}
 };
+function declVisual(){let m=D.decl.models.find(x=>x.lemma==="etxe");if(!m)return "";return `<section class="decl-visual cat-noun"><div class="decl-house"><svg viewBox="0 0 120 96" role="img" aria-label="Etxea"><path d="M12 43 60 8 108 43" fill="#ffdc79" stroke="#4327a0" stroke-width="5" stroke-linejoin="round"/><rect x="24" y="42" width="72" height="46" rx="5" fill="#eee8fc" stroke="#4327a0" stroke-width="4"/><rect x="53" y="61" width="16" height="27" rx="3" fill="#5b3cc4"/><rect x="34" y="52" width="13" height="13" rx="2" fill="#b9f2de"/><rect x="75" y="52" width="13" height="13" rx="2" fill="#b9f2de"/></svg></div><div><span class="catalog-kicker">ETXEAREN EREDUA</span><h2>Non? Nora? Nondik?</h2><div class="decl-directions">${[["NON","●"],["NORA","→"],["NONDIK","←"]].map(([k,i])=>`<div><strong>${k}</strong><span><b aria-hidden="true">${i}</b> ${esc(form(m,k,"sg"))}</span></div>`).join("")}</div><small>Mugatu singularra · jasotako eredua.</small></div></section>`}
 function lessonVisual(c){let v=visualMaps[c.id];if(!v)return "";return `<div class="visual-map"><span class="catalog-kicker">BEGIRATU EREDUARI</span><h3>${esc(v.q)}</h3>${v.rows.map(row=>`<div class="visual-row">${row.map((x,i)=>`${i?'<span class="visual-link" aria-hidden="true">→</span>':""}<span class="visual-node">${esc(x)}</span>`).join("")}</div>`).join("")}<small>Fitxako adibidearen eskema; ez da arau orokor baten formulazio osoa.</small></div>`}
 function startMini(){mode="choose";let shuffled=shuffle(D.cards),seen=new Set;queue=shuffled.filter(c=>{if(seen.has(c.family))return false;seen.add(c.family);return true}).slice(0,3);pos=0;score=0;view=2;next();scrollTo(0,0)}
 function milestoneData(){const v=Object.values(h),families=new Set(v.filter(x=>x.n>0).map(x=>x.family)).size,attempts=v.reduce((n,x)=>n+x.n,0),correct=Object.values(h).filter(x=>x.ok>0).length,independent=v.filter(x=>x.auto>0).length;return [{name:"Lehen urratsa",desc:"Lehen saiakera",value:attempts,target:1,icon:"bolt"},{name:"Esploratzailea",desc:"5 familia praktikatu",value:families,target:5,icon:"layers"},{name:"Ereduak ezagutu",desc:"10 itemetan ereduarekin bat",value:correct,target:10,icon:"check"},{name:"Neure kabuz",desc:"5 item idatziz, pistarik gabe",value:independent,target:5,icon:"book"}]}
 function milestones(){return `<section class="learn-step milestone-section"><div class="catalog-section-head"><h2>Nire lorpenak</h2><small>Jardunaren araberakoak</small></div><div class="milestone-grid">${milestoneData().map(x=>`<div class="milestone ${x.value>=x.target?"earned":""}"><span class="milestone-icon">${homeIcon(x.icon)}</span><strong>${x.name}</strong><small>${x.desc}</small><span class="milestone-count">${Math.min(x.value,x.target)} / ${x.target} ${x.value>=x.target?"· Lortuta":""}</span><div class="milestone-track"><div style="width:${100*Math.min(1,x.value/x.target)}%"></div></div></div>`).join("")}</div><p class="note">Jardunaren adierazleak dira, ez hizkuntza-mailaren ziurtagiriak. Ez da eperik, ezta zigorrik ere.</p></section>`}
-function miniChallenge(){return `<section class="bira-challenge">${bira("hello")}<div><span class="catalog-kicker">BIRAREKIN</span><h2>Hiru hitz, hiru erronka.</h2><p>3 galdera, 3 familia. Nahi duzunean, zure erritmoan.</p></div><button onclick="startMini()">Hasi ${homeIcon("arrow")}</button></section>`}
+function miniChallenge(){return `<section class="bira-challenge">${bira("hello")}<div><span class="catalog-kicker">BIRAREKIN</span><h2>Hiru galdera, hiru urrats.</h2><p>3 galdera, 3 familia. Nahi duzunean, zure erritmoan.</p></div><button onclick="startMini()">Hasi ${homeIcon("arrow")}</button></section>`}
 
 function home(){
  const attempts=Object.values(h).reduce((n,v)=>n+v.n,0), touched=new Set(Object.values(h).filter(v=>v.n>0).map(v=>v.family)).size;
@@ -105,7 +106,7 @@ function bank(){
   else {out+='<div class="catalog-section-head"><h2>Bost ikasgune</h2><button class="alt" onclick="catalogAll=true;draw()">Fitxa guztiak ikusi</button></div><div class="catalog-area-grid">'+catalogGroups.map(g=>`<button class="cat-area cat-${g.id}" onclick="chooseArea(${j(g.id)})"><span class="cat-area-icon">${catalogIcon(g.icon)}</span><strong>${esc(g.name)}</strong><span class="cat-area-desc">${esc(g.desc)}</span><span class="cat-area-foot">${g.ids.length} familia ${homeIcon("arrow")}</span></button>`).join("")+'</div>'}
  }else{
   if(!family&&declMatch&&level==="all"){let g=catalogGroups[0];out+='<div class="catalog-decl-link">'+catalogFamilyCard(F("decl"),g)+'</div>'}
-  if(family&&fam==="decl"){out+=declLab();if(query||level!=="all")out+='<p class="note">Deklinabide-ereduek ez dute fitxen zailtasun-mailaren iragazkirik.</p>'}
+  if(family&&fam==="decl"){out+=declVisual()+declLab();if(query||level!=="all")out+='<p class="note">Deklinabide-ereduek ez dute fitxen zailtasun-mailaren iragazkirik.</p>'}
   else {
    if(family)out+=otherLab();
    out+='<div class="catalog-section-head"><h2>'+ (a.length? a.length+' fitxa':'Fitxarik ez') +'</h2>'+(!family?'<button class="alt" onclick="catalogReset()">Esploraziora itzuli</button>':"")+'</div>';
