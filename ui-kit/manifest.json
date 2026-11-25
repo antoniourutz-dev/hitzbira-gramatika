@@ -1,6 +1,6 @@
 {
   "id": "HB-UI-001",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "review",
   "baseCommit": "897ae2b6d8e9e5f10191835ea7d8c21f92da5eb2",
   "scope": "preview branch; no main, database, assessment, or synchronization modifications",
@@ -67,9 +67,10 @@
   "assets": {
     "bira": "existing v0.2 in repository; pending final artistic validation",
     "illustrations": "existing World atlas; no replacement with new Illustration System assets",
-    "icons": "4 exact paths from Icon System",
+    "icons": "3 original Icon System navigation paths; journey replaced with ascending steps and destination flag (review)",
     "motion": "duration tokens and state/progress transitions; no autoplay Bira in home",
     "sound": "explicit preview in kit only; no audio added to real academic flow"
   },
-  "qa": "preview visual review required; no academic revalidation"
+  "qa": "preview visual review required; no academic revalidation",
+  "home": "Original production welcome styling restored; autonomous welcome animation disabled"
 }
