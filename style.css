@@ -88,7 +88,7 @@ progress {accent-color:var(--v)}
 .action-practice {--ac:var(--teal);--soft:var(--teal-soft)}
 .action-progress {--ac:var(--blue);--soft:var(--blue-soft)}
 .action-icon,.feature-symbol,.session-icon {display:grid;place-items:center;width:50px;height:50px;border-radius:15px;background:var(--soft);color:var(--ac);flex-shrink:0}
-.home-screen svg:not(.welcome-art),.nav-icon svg {width:23px;height:23px;flex-shrink:0}
+.home-screen svg:not(.welcome-art):not(.bira-art),.nav-icon svg {width:23px;height:23px;flex-shrink:0}
 .action-title {font-size:22px;font-weight:850;letter-spacing:-.025em}
 .action-desc {font-size:14px;line-height:1.5;color:var(--muted);font-weight:400}
 .action-link {color:var(--ac);margin-top:auto;padding-top:10px;font-size:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
@@ -317,3 +317,25 @@ nav button {display:flex;flex-direction:column;align-items:center;justify-conten
 .decl-directions span{font-size:16px;font-weight:750;overflow-wrap:anywhere}
 .decl-directions b{color:var(--cat-dark)}
 @media(max-width:540px){.decl-visual{padding:14px;gap:12px;align-items:flex-start;flex-direction:column}.decl-house{width:80px}.decl-visual>div:nth-child(2){width:100%}.decl-directions>div{padding:8px}.decl-directions span{font-size:14px}}
+
+/* 05.1 / distinguish artwork from UI icons, with explicit responsive sizes. */
+.welcome{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);min-height:300px}
+.welcome-bira{min-width:0;min-height:280px;padding:18px 22px;isolation:isolate;gap:10px}
+.welcome-bira:before{width:min(88%,280px);aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1}
+.welcome-bira .bira-art{display:block;width:clamp(170px,28vw,275px);max-width:100%;height:auto;aspect-ratio:210/180;transform:none}
+.welcome-bira>span{font-size:14px;padding:8px 16px}
+.home-screen .bira-challenge .bira-art{width:100px;height:auto;aspect-ratio:210/180}
+@media(max-width:700px){
+ .welcome-bira{min-height:180px;padding:10px}
+ .welcome-bira .bira-art{width:clamp(120px,29vw,200px)}
+ .welcome-bira>span{font-size:12px;padding:7px 11px}
+}
+@media(max-width:440px){
+ .welcome{grid-template-columns:minmax(0,1fr);gap:0}
+ .welcome-copy{padding:23px 22px 6px}
+ .welcome-bira{min-height:0;padding:8px 15px 18px;gap:5px}
+ .welcome-bira:before{width:160px}
+ .welcome-bira .bira-art{width:155px;height:auto;transform:none}
+ .welcome-bira>span{font-size:12px}
+ .home-screen .bira-challenge .bira-art{width:67px;height:auto}
+}
