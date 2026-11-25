@@ -1,14 +1,14 @@
 {
   "id": "/",
-  "name": "HitzBira · Gramatika eta aditzak",
+  "name": "HitzBira · Gramatika",
   "short_name": "HitzBira",
-  "description": "Euskararen gramatika eta aditzak: ikasi, praktikatu eta hobetu.",
+  "description": "Euskararen gramatika: ikasi, praktikatu eta hobetu.",
   "lang": "eu",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f6f4fc",
-  "theme_color": "#6946cd",
+  "theme_color": "#5b3cc4",
   "categories": [
     "education",
     "games"
