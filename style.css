@@ -1,1 +1,71 @@
 :root{--v:#6244c7;--ink:#28243a;--line:#e4e0ec;--bg:#f7f7fb;--muted:#696278}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,sans-serif}header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--line)}header>div,main,nav>div{max-width:1100px;margin:auto;padding:16px 22px}header>div{display:flex;align-items:center;gap:12px}.logo{background:var(--v);color:white;border-radius:12px;padding:6px 13px;font-size:27px;font-weight:bold}.brand{font-size:24px;font-weight:850;line-height:1}.brand small{display:block;color:var(--v);font-size:10px;letter-spacing:2px;margin-top:5px}.version{margin-left:auto;font-size:12px;color:var(--muted)}main{padding-bottom:108px}h1{font-size:clamp(28px,4vw,40px);line-height:1.13;margin:12px 0}h2{font-size:23px;line-height:1.25}h3{margin:5px 0;font-size:18px}p{margin:8px 0 14px}small,.muted{color:var(--muted);font-weight:400}.hero,.panel,.tile{background:white;border:1px solid var(--line);border-radius:15px;padding:18px;margin:12px 0}.hero{border-left:5px solid var(--v);padding:24px}.eyebrow{font-size:12px;letter-spacing:1.1px;color:var(--v);font-weight:750}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.tile{display:block;text-align:left;width:100%;height:100%;margin:0;text-decoration:none;color:var(--ink);font-weight:400;background:white;border:1px solid var(--line)}.tile:hover{border-color:#a58bdd}.symbol{display:inline-block;padding:5px 9px;background:#eee9fa;color:var(--v);font-weight:750;border-radius:8px}.row{display:flex;gap:12px;flex-wrap:wrap}.row>div{flex:1;min-width:145px}button,input,select{font:inherit}button{cursor:pointer;border:1px solid transparent;background:var(--v);color:white;font-weight:700;padding:10px 15px;border-radius:10px;min-height:44px}.alt,.chips button{background:#eee9fa;color:#4d3888}.chips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.chips .active{background:var(--v);color:white}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #ce8927;outline-offset:2px}button:disabled{cursor:default;opacity:.9}input,select{width:100%;background:white;color:var(--ink);border:1px solid #d1cae1;border-radius:10px;padding:10px}label{display:block;font-weight:700;margin:5px 0}.example{background:#f0ebfc;border-left:4px solid #9275d8;padding:13px;border-radius:9px;margin:8px 0;font-size:18px;font-weight:650}.contrast{background:#f4f3f9;padding:13px;border-radius:9px}.note{border-left:3px solid #ad97de;padding-left:10px;color:var(--muted);font-size:13px}.answer{display:block;width:100%;text-align:left;background:white;color:var(--ink);border:2px solid var(--line);margin:8px 0}.good{background:#e1f3e8;color:#17603c;border-color:#73a989}.bad{background:#fcece8;color:#8b3025;border-color:#c9877c}.feedback{padding:14px;border-radius:10px;margin:12px 0}.metric{font-size:30px;font-weight:850;color:var(--v)}.bar{height:8px;background:#e9e4f2;border-radius:9px;overflow:hidden}.bar div{height:100%;background:var(--v)}nav{position:fixed;bottom:0;width:100%;background:white;border-top:1px solid var(--line);z-index:3}nav>div{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:8px}nav button{background:white;color:var(--muted);font-size:13px;padding:8px 3px}nav button.active{background:#eee9fa;color:var(--v)}nav b{display:block;font-size:19px}a{color:var(--v)}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:460px}th,td{text-align:left;padding:9px;border-bottom:1px solid var(--line)}th{background:#eee9fa}.result{font-size:clamp(22px,5vw,36px);font-weight:800;color:var(--v);padding:18px;background:#f0ebfc;border-radius:10px;overflow-wrap:anywhere}.auditrow{padding:10px 0;border-bottom:1px solid var(--line)}@media(max-width:540px){header>div,main{padding-left:14px;padding-right:14px}.grid{grid-template-columns:1fr}.hero{padding:18px}.version{font-size:10px}}
+
+/* HITZBIRA · 01 / visual identity
+   Shared palette, typography, spacing and accessible interaction.
+   Keep the learning engine and content unchanged. */
+:root {
+  --v:#5b3cc4; --ink:#211c38; --line:#e2ddec; --bg:#f7f6fc; --muted:#625b73;
+  --brand-dark:#4327a0; --brand-soft:#eee8fc;
+  --teal:#087f70; --teal-soft:#e0f5ef; --blue:#315ac4; --blue-soft:#e3ebff;
+  --amber:#966000; --amber-soft:#fff1d4; --rose:#ae315f; --rose-soft:#fce4ec;
+  --success:#17603c; --error:#a02b36;
+  --radius-sm:12px; --radius-md:16px; --radius-lg:22px;
+  --shadow:0 5px 18px #30205b0d;
+  --font:ui-rounded,"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body {font-family:var(--font);line-height:1.6;background:radial-gradient(ellipse at 85% 0,#ece7fb 0,transparent 38rem),var(--bg)}
+header {background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header>div {padding-block:14px;gap:12px}
+.logo {display:grid;place-items:center;width:52px;height:52px;padding:5px;border-radius:16px;background:linear-gradient(145deg,#7659de,#5131bc);box-shadow:0 3px 0 #412697;flex-shrink:0}
+.brand {font-size:27px;font-weight:900;letter-spacing:-1.2px;color:var(--ink)}
+.brand-accent {color:var(--v)}
+.brand small {font-size:10px;letter-spacing:2.1px;color:var(--muted);font-weight:800}
+.version {font-size:12px;font-weight:650}
+main {padding-top:24px}
+h1,h2,h3 {letter-spacing:-.035em;font-weight:850}
+h1 {font-size:clamp(30px,4.2vw,44px)}
+h2 {font-size:clamp(23px,3vw,28px)}
+h3 {font-size:19px}
+.hero,.panel,.tile {border-radius:var(--radius-lg);box-shadow:var(--shadow);border:1px solid var(--line)}
+.hero {position:relative;overflow:hidden;isolation:isolate;padding:clamp(22px,4vw,38px);background:linear-gradient(120deg,#fff 0,#fff 54%,#f0eafe 100%);border-left:0}
+.hero:after {content:"";position:absolute;z-index:-1;pointer-events:none;right:-74px;top:-90px;width:240px;height:240px;border:34px solid #e4d9fa;border-radius:50%;opacity:.55}
+.eyebrow {font-weight:850;letter-spacing:1.4px}
+.grid {gap:16px}
+.tile {padding:21px;border-top:4px solid var(--v);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.tile .symbol {background:var(--brand-soft);color:var(--brand-dark);border-radius:var(--radius-sm);padding:8px 11px}
+@media(hover:hover) {.tile:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 9px 24px #30205b14;border-color:#aa98e2}}
+button,input,select,textarea {font:inherit}
+button:not(.tile) {border-radius:var(--radius-sm);min-height:44px;font-weight:750;transition:filter .15s ease}
+button:not(.tile):not(:disabled):hover {filter:brightness(.96)}
+.alt,.chips button {background:var(--brand-soft);color:var(--brand-dark)}
+.chips .active {background:var(--v);color:white}
+input,select,textarea {border-radius:var(--radius-sm);min-height:44px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible {outline:3px solid var(--blue);outline-offset:3px}
+.example,.result {background:var(--brand-soft);border-radius:var(--radius-md)}
+.contrast {border-radius:var(--radius-md)}
+.answer {border-radius:var(--radius-md);min-height:48px}
+.good {background:#e1f3e8;color:var(--success);border-color:#73a989}
+.bad {background:#fce8e9;color:var(--error);border-color:#cc8790}
+.feedback {border-radius:var(--radius-md)}
+.bar {height:10px;background:#e9e4f2}
+nav {box-shadow:0 -6px 26px #30205b0b;background:#ffffffee;backdrop-filter:blur(12px);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav>div {gap:8px}
+nav button {min-height:48px;border-radius:13px;font-weight:750}
+nav button.active {background:var(--brand-soft);color:var(--brand-dark)}
+progress {accent-color:var(--v)}
+::selection {background:#ded3ff;color:var(--ink)}
+@media(max-width:600px) {
+  header>div,main {padding-inline:16px}
+  .version {font-size:10px;text-align:right;max-width:100px}
+  .logo {width:46px;height:46px;border-radius:14px}
+  .brand {font-size:24px}
+  main {padding-top:16px;padding-bottom:calc(116px + env(safe-area-inset-bottom,0px))}
+  .hero,.panel,.tile {border-radius:17px}
+  .grid {gap:12px}
+  .tile {padding:16px}
+  nav>div {gap:4px}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .tile:hover {transform:none}
+}
