@@ -4,9 +4,9 @@
 @media(max-width:540px){.pwa-tools{padding-inline:14px}.verb-crosslink button{width:100%;justify-content:center}}
 
 /* Student sign-in: no guest learning UI, no public registration. */
-#hb-login{display:none}
-.hb-locked #hb-login{display:flex;min-height:100vh;min-height:100dvh;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at top left,#E8DEFF 0%,#F8F7FC 56%,#F2EBFF 100%)}
-.hb-locked .hb-common-header,.hb-locked .pwa-tools,.hb-locked .hb-account-bar,.hb-locked #app,.hb-locked nav{display:none!important}
+#hb-login[hidden],.hb-account-bar [hidden],#hb-garden[hidden]{display:none!important}
+#hb-login{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#211c3866;backdrop-filter:blur(5px);overflow:auto}
+
 .hb-login-card{background:white;border:1px solid #E4DFF1;border-radius:28px;padding:30px;width:min(100%,420px);box-shadow:0 20px 70px #211c3815;color:#211c38}
 .hb-login-brand{text-align:center}.hb-login-brand>span{font-weight:800;letter-spacing:.1em;color:#211c38;font-size:13px}.hb-login-brand>span span{color:#5b3cc4}
 .hb-login-bira{height:145px;display:flex;justify-content:center}.hb-login-bira svg{height:100%;width:170px;max-width:100%}
@@ -14,4 +14,6 @@
 #hb-login-form{display:grid;gap:9px;margin:0}#hb-login-form label{font-size:14px;font-weight:700;color:#211c38;margin-top:5px}#hb-login-form input{width:100%;box-sizing:border-box;min-height:50px;background:#FAF9FC;color:#211c38;border:1px solid #D7D0E6;padding:12px;border-radius:12px;font:inherit}#hb-login-form input:focus{outline:3px solid #C5B6FF;border-color:#5b3cc4}
 #hb-login-submit{margin-top:10px;background:#5B3CC4;color:white;border:0;border-radius:13px;min-height:50px;font-size:16px;font-weight:750;width:100%;cursor:pointer}#hb-login-submit:disabled{opacity:.65;cursor:wait}#hb-login-message{font-size:13px;color:#9b2854;margin:3px 0 0;min-height:18px;line-height:1.45}
 .hb-account-bar{display:flex;max-width:1100px;margin:auto;padding:6px 22px;align-items:center;justify-content:space-between;color:#625b73;gap:12px;font-size:13px}.hb-account-bar button{min-height:38px;font-size:13px}
-@media(max-width:500px){.hb-locked #hb-login{padding:16px}.hb-login-card{padding:23px}.hb-account-bar{padding:5px 14px}}
+@media(max-width:500px){#hb-login{padding:16px}.hb-login-card{padding:23px}.hb-account-bar{padding:5px 14px}}
+
+.hb-login-card{position:relative}.hb-login-card #hb-login-close{position:absolute;right:14px;top:14px;width:40px;height:40px;font-size:22px;padding:4px}.hb-account-bar>div{display:grid;gap:2px}.hb-account-bar #hb-show-login{background:#5b3cc4;color:white}.hb-sync-status{font-size:11px;font-weight:600}.hb-sync-ok{color:#087f70}.hb-sync-pending{color:#966000}.hb-sync-warning{color:#9b2854}.hb-garden{max-width:1056px;margin:10px auto 14px;display:flex;align-items:center;gap:14px;border:1px solid #cfe7db;background:linear-gradient(120deg,#e9f8ef,#faf9ff);border-radius:20px;padding:14px 18px;color:#185a47}.hb-garden-icon{font-size:32px;flex:none}.hb-garden-copy{display:grid;gap:3px;flex:1}.hb-garden-copy .catalog-kicker{color:#087f70;font-size:10px}.hb-garden-copy strong{font-size:16px}.hb-garden-copy small{font-size:11px;color:#42675a}.hb-garden-days{display:flex;gap:5px}.hb-petal{width:27px;height:30px;border:1px dashed #b3d7c2;border-radius:10px;display:grid;place-items:center;color:#7cb297;font-size:19px}.hb-petal.grown{background:#ffdc79;color:#966000;border-color:#f2c95d}.hb-petal.today{outline:2px solid #5b3cc4;outline-offset:2px}@media(max-width:700px){.hb-garden{margin:8px 14px 12px;flex-wrap:wrap;gap:9px}.hb-garden-days{margin-left:42px}.hb-petal{width:24px;height:26px}}
