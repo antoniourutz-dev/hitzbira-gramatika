@@ -21,7 +21,7 @@ const islandShapes={
  text:'<path d="M16 82 37 65 65 79 91 43 112 55 143 79Z" fill="#9aad92" stroke="#5f7764" stroke-width="1.5"/><path d="m92 35 45-9-42 19" fill="#ffdc79" opacity=".76"/>'+lighthouse(94,57,1.03)+house(37,78,"#f5e0e8")+tree(18,76,.62)+tree(129,78,.64)+'<path d="M53 93q20-8 32-3" fill="none" stroke="#d7b787" stroke-width="5" stroke-linecap="round"/>'
 };
 function island(id){
- const p=palettes[id]||palettes.text,shape=islandShapes[id]||islandShapes.text;
+ const k=Object.hasOwn(palettes,id)?id:"text",p=palettes[k],shape=islandShapes[k];
  return '<svg class="island-art hb-atlas-island" viewBox="0 0 160 120" aria-hidden="true" focusable="false"><circle cx="80" cy="52" r="43" fill="'+p[1]+'" opacity=".76"/><circle cx="126" cy="23" r="9" fill="#ffdc79"/><path d="M21 39q4-7 11-4 5-7 12-1 8-3 13 4" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><ellipse cx="80" cy="101" rx="73" ry="11" fill="#8abac7" opacity=".27"/><path d="M7 86Q22 73 44 77 69 67 97 76 131 70 153 87l-17 16H25Z" fill="'+p[3]+'" stroke="'+p[3]+'" stroke-width="1.5"/><path d="M7 86Q22 73 44 77 69 67 97 76 131 70 153 87l-17 9H25Z" fill="'+p[2]+'" stroke="'+p[3]+'" stroke-width="1.5"/>'+shape+wave+'</svg>';
 }
 const covers={
