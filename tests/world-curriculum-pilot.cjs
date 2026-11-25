@@ -1,0 +1,62 @@
+'use strict';
+const fs=require('node:fs');
+const path=require('node:path');
+function runWorldTests(src){
+ const checks=[];function check(n,v){if(!v)throw Error("FAIL "+n);checks.push(n)}
+ const w={};for(const path of ["core.js","world.js","story.js"])new Function("window",src[path])(w);new Function(src["app.js"]);
+ const api=w.HitzBiraWorldJourney,world=w.HitzBiraWorld,g=w.HitzBiraCurriculum,sp=w.HitzBiraSpaced,D=86400000,T=Date.parse("2026-11-25T10:00:00Z");
+ const bank=p=>JSON.parse(src[p].match(/^\s*const\s+(?:BANK|DATA)\s*=\s*([\s\S]*);\s*$/)[1]);const cards=["05","06","07","08"].flatMap(x=>bank("legacy/bank"+x+".js").cards),lookup=id=>cards.find(c=>c.id===id);
+ const all=["noun","verb","clause","compare","text"].map(id=>api.island(id)),nodes=all.flatMap(x=>x.rows.map(r=>r.id));
+ check("all five islands open",all.every(x=>x.open));
+ check("six active distinct pilot nodes",nodes.length===6&&new Set(nodes).size===6&&nodes.every(id=>g.route(id)));
+ check("nonpilot islands content pending not blocked",all.filter(x=>!x.rows.length).length===2&&all.filter(x=>!x.rows.length).every(x=>x.open&&!x.plan));
+ check("unknown island closed only as invalid identifier",!api.island("none").open&&!api.island("none").plan);
+ check("three existing chapters and six branches",world.missions.length===3&&world.missions.reduce((n,m)=>n+m.routes.length,0)===6);
+ check("all nine existing practice card refs resolve",new Set(world.missions.flatMap(m=>m.steps.map(s=>s.id))).size===9&&world.missions.every(m=>m.routes.every(r=>world.resolve(m.id,r.id,lookup))));
+ check("unknown mission not invented",api.mission("HB-WM-C02")===null);
+ check("storm linked only to thematic pilot nodes",api.mission("storm").rows.map(r=>r.id).join()==="DEK-1,JOS-1");
+ check("message linked to text pilot",api.mission("message").rows.map(r=>r.id).join()==="ORT-1,JOS-1");
+ check("festival linked to nominal and verbal pilot",api.mission("festival").rows.map(r=>r.id).join()==="IZE-1,V-0,ADI-1");
+ check("recommendation not academic evidence",all.filter(x=>x.plan).every(x=>x.plan.academicEvidence===false&&x.plan.mode==="practice_only"));
+ check("new learner can choose any narrative",world.missions.every(m=>api.mission(m.id).open));
+ const attempts={"GB-ize-01":{n:1,lastResult:"incorrect"},"D09-liburu-NOR-sg":{n:1,lastResult:"unverified"}};
+ check("actual review prioritized",api.island("noun",{attempts}).plan.intent==="review");
+ check("unverified counted separately",api.island("noun",{attempts}).rows.find(r=>r.id==="DEK-1").compare===1&&api.island("noun",{attempts}).rows.find(r=>r.id==="DEK-1").review===0);
+ check("history does not claim mastery",api.island("noun",{attempts}).rows.every(r=>r.academicEvidence===false));
+ let schedule={};const event=(key,id)=>({key,id,at:T,session:"s"+id,result:"match",written:true,assisted:false});schedule=sp.record(schedule,event("GB-ize-01","1"));schedule=sp.record(schedule,event("HB-L01","2"));
+ let now=T+D-1;const agenda={agenda:(input={})=>sp.agenda(schedule,now,input.scope),plan:(input={},node=null)=>sp.plan(schedule,{...input,now},node)};
+ check("future practice displayed not yet due",api.island("noun",{},agenda).rows[0].scheduled===1&&api.island("noun",{},agenda).rows[0].due===0);
+ now+=1;
+ check("due item chosen with exact key",api.island("noun",{},agenda).plan.intent==="spaced"&&api.island("noun",{},agenda).plan.id==="GB-ize-01");
+ check("verb due preserves recall route",api.island("verb",{},agenda).plan.lesson==="HB-L01"&&api.island("verb",{},agenda).plan.phase==="recall");
+ check("due plan constrained to context",api.mission("message",{},agenda).plan.intent!=="spaced");
+ check("repair before due",api.island("noun",{attempts},agenda).plan.intent==="review");
+ check("novelty after spaced",api.island("noun",{lastIntent:"spaced",lastNode:"IZE-1"},agenda).plan.intent==="unseen");
+ const r=world.resolve("storm","port",lookup),queue=r.cards.slice(),run={mission:r.mission,route:r.route,queue},res=queue.map((c,i)=>({id:c.id,result:["match","incorrect","unverified"][i],assisted:i===0,mode:"choose"}));
+ check("partial mission cannot mark visit",api.outcome(run,queue,2,res.slice(0,2))===null);
+ check("queue identity protects other session",api.outcome(run,queue.slice(),3,res)===null);
+ check("wrong response IDs rejected",api.outcome(run,queue,3,[{...res[0],id:"bad"},...res.slice(1)])===null);
+ check("unknown result rejected",api.outcome(run,queue,3,[{...res[0],result:"unknown"},...res.slice(1)])===null);
+ const out=api.outcome(run,queue,3,res);check("completed preparation marks visit only",out.state==="visited"&&out.prepared===3&&!out.validatedResolution&&out.openTask==="not_observed"&&!out.academicEvidence);
+ check("feedback counts separated",out.matching===1&&out.review===1&&out.compare===1&&out.assisted===1);
+ check("all model matches still not resolution",!api.outcome(run,queue,3,res.map(x=>({...x,result:"match"}))).validatedResolution);
+ check("one branch visit never visits other branch",w.HitzBiraStory.journal(["storm:port"],world.missions)[0].routes.map(x=>x.visited).join()==="true,false");
+ const names=["worldPreparation","startWorldPractice","worldConclusion"];const code=names.map(n=>src["app.js"].split("\n").find(x=>x.startsWith("function "+n+"("))).join("\n");
+ const storage=new Map(),ui=new Function("window","fixtures","storage",`let worldRun=fixtures.run,queue=fixtures.queue,pos=3,sessionResults=fixtures.res,worldDone=[],input={},calls=[],writes=0;const WORLD_KEY="world";
+ const localStorage={setItem(k,v){writes++;storage.set(k,v)}};function curriculumInput(){return input}function esc(x){return String(x??"")}function j(x){return JSON.stringify(x)}function startCurriculum(...args){calls.push(args)}function alert(x){calls.push(["alert",x])}function storyBridge(){return "bridge"}
+ ${code}
+ return {worldPreparation,startWorldPractice,worldConclusion,setInput(x){input=x},setPos(x){pos=x},get:()=>({calls,writes,worldDone})};`)(w,{run,queue,res},storage);
+ w.HBData={keyFor:k=>"guest:"+k};w.HitzBiraAgenda=agenda;
+ check("actual UI includes due count and action",ui.worldPreparation("island","noun").includes("1 orain gogoratzeko")&&ui.worldPreparation("island","noun").includes("Gogoratu"));
+ ui.startWorldPractice("island","noun");check("actual due action routes exact ref",JSON.stringify(ui.get().calls[0])===JSON.stringify(["IZE-1",null,true,"GB-ize-01"]));
+ ui.startWorldPractice("island","verb");check("actual lesson route exact ref",JSON.stringify(ui.get().calls[1])===JSON.stringify(["V-0",null,true,"HB-L01"]));
+ ui.startWorldPractice("island","compare");check("pending island cannot invent activity",ui.get().calls[2][0]==="alert");
+ ui.setPos(2);check("incomplete UI no storage",ui.worldConclusion()===""&&ui.get().writes===0);ui.setPos(3);
+ const html=ui.worldConclusion();check("finale explicit open task unverified",html.includes("Azken ekoizpena ez da egiaztatu")&&html.includes("1 eredurekin bat"));
+ ui.worldConclusion();check("visit idempotent",ui.get().writes===1&&ui.get().worldDone.join()==="storm:port"&&storage.get("guest:world")==='["storm:port"]');
+ check("adapter present in atlas, catalog and journal",src["app.js"].includes('worldPreparation("island",group.id)')&&src["app.js"].includes('worldPreparation("mission",m.id)')&&src["app.js"].includes('worldPreparation("mission",row.mission.id)'));
+ return checks;
+}
+const files=["core.js","world.js","story.js","app.js","legacy/bank05.js","legacy/bank06.js","legacy/bank07.js","legacy/bank08.js","legacy/decl.js"];
+const src=Object.fromEntries(files.map(p=>[p,fs.readFileSync(path.join(__dirname,'..',p),'utf8')]));
+const checks=runWorldTests(src);for(const name of checks)console.log('PASS '+name);console.log(checks.length+' checks passed');
