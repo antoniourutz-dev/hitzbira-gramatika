@@ -220,6 +220,40 @@ html[data-theme="dark"] .feedback-pair small{color:#c9c2e0}
 html[data-theme="dark"] .hb-cast-card h3,html[data-theme="dark"] .hb-chapter-copy h3{color:#f3f1fc}
 html[data-theme="dark"] .hb-cast-card strong{color:#c5b6ff}
 html[data-theme="dark"] .hb-cast-card p,html[data-theme="dark"] .hb-chapter-copy p{color:#c2bad8}
+/* 2.0.0 · Unified brand mark, illustrated islands Bento, Aditza sub-tabs, card step-nav & Nire bidea hero */
+.hb-common-header .logo{width:44px;height:44px;padding:0;border-radius:13px;overflow:hidden;background:#34204F;box-shadow:0 2px 8px rgba(52,32,79,.22)}
+.hb-common-header .logo img{width:100%;height:100%;display:block;object-fit:cover}
+@media(max-width:540px){.hb-common-header .logo{width:40px;height:40px;border-radius:11px}}
+.catalog-area-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.catalog-area-grid .cat-area{grid-column:span 2;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
+.catalog-area-grid .cat-area:nth-child(-n+2){grid-column:span 3;flex-direction:row;align-items:center;gap:16px}
+.cat-area-art{display:grid;place-items:center;width:82px;height:66px;padding:4px;border-radius:16px;background:var(--cat-soft);border:1px solid var(--cat-line);flex-shrink:0}
+.catalog-area-grid .cat-area:nth-child(-n+2) .cat-area-art{width:96px;height:78px}
+.cat-area-art .island-art{width:100%;height:100%;max-width:none;object-fit:contain}
+.cat-area-body{display:flex;flex-direction:column;align-items:flex-start;gap:6px;flex:1;min-width:0;width:100%;height:100%}
+.cat-area-body strong{font-size:20px;letter-spacing:-.025em;line-height:1.2}
+@media(max-width:820px){.catalog-area-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-area-grid .cat-area,.catalog-area-grid .cat-area:nth-child(-n+2){grid-column:auto;flex-direction:column;align-items:flex-start}.catalog-area-grid .cat-area:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center}.catalog-area-grid .cat-area:nth-child(-n+2) .cat-area-art{width:82px;height:66px}}
+@media(max-width:540px){.catalog-area-grid{grid-template-columns:1fr}.catalog-area-grid .cat-area,.catalog-area-grid .cat-area:nth-child(-n+2),.catalog-area-grid .cat-area:last-child:nth-child(odd){grid-column:auto;display:flex;flex-direction:row;align-items:center;gap:12px;padding:15px}.cat-area-art,.catalog-area-grid .cat-area:nth-child(-n+2) .cat-area-art{width:68px;height:56px;border-radius:13px}.cat-area-body strong{font-size:18px}}
+.lesson-panel .lesson-step-nav{margin-top:22px;padding-top:16px;border-top:1px solid var(--line,#e4dff1)}
+.verb-subtabs{margin:0 0 14px}
+.hb-verb-surface .verb-subtabs button{min-height:42px;border-radius:11px}
+.hb-verb-surface .verb-subtabs button.active{background:#fff;color:#075c52;border-color:#bfe3d8;box-shadow:0 2px 8px rgba(7,92,82,.1)}
+.hb-verb-surface .verb-subtabs button.alt{background:transparent;color:#4f6660;border-color:transparent}
+.hb-verb-surface .verb-subtabs button.alt:hover{background:rgba(255,255,255,.6);color:#075c52}
+.hb-verb-surface .verb-subtabs{background:#e4f4ef;border-color:#c4e3da}
+.journey-hero-unified .journey-hero-next{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.78);border:1px solid var(--cat-line);border-radius:16px}
+.journey-hero-next small{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--cat-dark)}
+.journey-hero-next strong{display:block;font-size:15px;color:var(--ink);margin-top:2px}
+.journey-hero-next button{display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.practice-screen .learning-hero-icon .bira-art{width:100%;height:auto;transform:none}
+html[data-theme="dark"] .cat-area-art{background:#241f3b;border-color:#3a325c}
+html[data-theme="dark"] .lesson-panel .lesson-step-nav{border-color:#342e52}
+html[data-theme="dark"] .hb-verb-surface .verb-subtabs{background:#122422;border-color:#234c45}
+html[data-theme="dark"] .hb-verb-surface .verb-subtabs button.alt{color:#9ad6c8}
+html[data-theme="dark"] .hb-verb-surface .verb-subtabs button.active{background:#1b453e;color:#fff;border-color:#398c7c}
+html[data-theme="dark"] .journey-hero-unified .journey-hero-next{background:rgba(28,25,46,.82);border-color:#3e3761}
+html[data-theme="dark"] .journey-hero-next small{color:#c5b6ff}
+html[data-theme="dark"] .journey-hero-next strong{color:#f3f1fc}
 @media(prefers-reduced-motion:reduce){.hb-slot.filled,.lesson-panel{animation:none!important}}
 
 
