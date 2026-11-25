@@ -210,20 +210,21 @@ html[data-theme="dark"] .lab-eq-chip{background:#1c192e;color:#f3f1fc}
 html[data-theme="dark"] .lab-eq-op{color:#7de3d1}
 html[data-theme="dark"] .hb-atlas-bento .map-detail{background:#1c192e;border-color:#342e52;color:#f3f1fc}
 html[data-theme="dark"] .hb-footer-inner{border-color:#342e52}
-/* Bira v0.2 dark-mode contrast rim & cast avatar framing */
+/* Bira v0.2 crisp dark-mode contrast stages (zero fuzzy outer glow) & cast avatar framing */
 .hb-cast-avatar .bira-art{width:36px;height:36px;object-fit:contain}
-html[data-theme="dark"] .bira-art{filter:drop-shadow(0 0 1.4px rgba(255,248,228,.95)) drop-shadow(0 0 1px rgba(255,248,228,.9)) drop-shadow(0 6px 12px rgba(0,0,0,.35))}
-html[data-theme="dark"] .hb-cast-avatar .bira-art{filter:none}
-html[data-theme="dark"] .welcome-bira .bira-art{filter:drop-shadow(0 0 1.6px rgba(255,248,228,.95)) drop-shadow(0 0 1px rgba(255,248,228,.9)) drop-shadow(0 12px 18px rgba(0,0,0,.42))}
+html[data-theme="dark"] .welcome-bira .bira-art{filter:drop-shadow(0 14px 20px rgba(10,6,24,.36))}
+html[data-theme="dark"] .hb-login-bira{width:128px;height:128px;margin:10px auto 4px;padding:12px;border-radius:50%;background:#ece5ff;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+html[data-theme="dark"] .session-bira .bira-art,html[data-theme="dark"] .bira-tip .bira-art{background:#ece5ff;border-radius:50%;padding:5px}
+html[data-theme="dark"] .journey-screen .learning-hero-icon,html[data-theme="dark"] .practice-screen .learning-hero-icon,html[data-theme="dark"] .session-screen .learning-hero-icon{background:#ece5ff;border-color:#d5c8f7;padding:8px}
 html[data-theme="dark"] .feedback-pair>div{background:rgba(19,17,32,.6);border:1px solid rgba(255,255,255,.12);color:#f3f1fc}
 html[data-theme="dark"] .feedback-pair small{color:#c9c2e0}
 html[data-theme="dark"] .hb-cast-card h3,html[data-theme="dark"] .hb-chapter-copy h3{color:#f3f1fc}
 html[data-theme="dark"] .hb-cast-card strong{color:#c5b6ff}
 html[data-theme="dark"] .hb-cast-card p,html[data-theme="dark"] .hb-chapter-copy p{color:#c2bad8}
-/* 2.0.0 · Unified brand mark, illustrated islands Bento, Aditza sub-tabs, card step-nav & Nire bidea hero */
-.hb-common-header .logo{width:44px;height:44px;padding:0;border-radius:13px;overflow:hidden;background:#34204F;box-shadow:0 2px 8px rgba(52,32,79,.22)}
-.hb-common-header .logo img{width:100%;height:100%;display:block;object-fit:cover}
-@media(max-width:540px){.hb-common-header .logo{width:40px;height:40px;border-radius:11px}}
+/* 2.0.1 · Unified brand mark, illustrated islands Bento, Aditza sub-tabs, card step-nav & Nire bidea hero */
+.hb-common-header .logo{width:44px;height:44px;padding:5px;border-radius:14px;overflow:hidden;background:linear-gradient(145deg,#6f50e2,#4c2cb8);box-shadow:0 3px 10px rgba(76,44,184,.26)}
+.hb-common-header .logo img{width:100%;height:100%;display:block;object-fit:contain}
+@media(max-width:540px){.hb-common-header .logo{width:40px;height:40px;padding:4px;border-radius:12px}}
 .catalog-area-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
 .catalog-area-grid .cat-area{grid-column:span 2;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
 .catalog-area-grid .cat-area:nth-child(-n+2){grid-column:span 3;flex-direction:row;align-items:center;gap:16px}
