@@ -77,7 +77,7 @@ function createSpaced(curriculum){
  const targets=curriculum.nodes.flatMap(n=>{const r=curriculum.route(n.id);return r?[...r.refs.map(key=>({node:n.id,key,kind:"item",version:n.vid})),...r.lessons.map(key=>({node:n.id,key,kind:"lesson",version:n.vid}))]:[]});
  const byKey=new Map(targets.map(t=>[t.key,t]));
  const clean=(key,v)=>{const t=byKey.get(key);return !!(t&&v&&v.policy===policy&&v.version===t.version&&Number.isInteger(v.step)&&v.step>=0&&v.step<days.length&&validTime(v.at)&&validTime(v.due)&&v.due>=v.at+DAY&&typeof v.session==="string"&&v.session.length>0&&typeof v.event==="string"&&v.event.length>0)};
- const record=(state,event)=>{const t=byKey.get(event?.key),at=event?.at;if(!t||!validTime(at)||typeof event.session!=="string"||!event.session||typeof event.id!=="string"||!event.id||!["match","mismatch","unverified","exposure"].includes(event.result))return state;const prev=clean(t.key,state?.[t.key])?state[t.key]:null;if(prev&&(event.id===prev.event||at<prev.at))return state;
+ const record=(state,event)=>{const t=byKey.get(event?.key),at=event?.at;if(!t||!validTime(at)||typeof event.session!=="string"||!event.session||typeof event.id!=="string"||!event.id||!["match","mismatch","unverified","exposure"].includes(event.result))return state;const prev=clean(t.key,state?.[t.key])?state[t.key]:null;if(prev&&(event.id===prev.event||at<=prev.at))return state;
  const due=!!prev&&at>=prev.due&&at-prev.at>=DAY&&prev.session!==event.session;
  const success=event.result==="match"&&event.written===true&&event.assisted===false;
  let step=prev?.step??0,reason="initial",delay=days[step];
