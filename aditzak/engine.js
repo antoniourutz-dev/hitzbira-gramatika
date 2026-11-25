@@ -41,7 +41,7 @@ let pathState={level:0,lesson:null,stage:0,reveal:false},pathProgress={};try{pat
 function savePath(){try{window.HBData.save("hitzbira-path-v1",pathProgress)}catch{}}
 function pathPool(l){return DATA.filter(d=>(l.s===-1||d.s===l.s)&&l.m.includes(d.m)&&!d.roles.some(labIsHi))}
 function recallPool(l){let shown=new Set(l.ex.map(x=>x[0])),pool=pathPool(l).filter(d=>!shown.has(d.id));return pool.length?pool:pathPool(l)}
-function pathResult(s){if(!s.path||s.pathSaved)return;s.pathSaved=true;let {id,phase}=s.path,p=pathProgress[id]||{},prev=p[phase];p[phase]={correct:s.score,total:s.q.length,date:new Date().toISOString(),attempts:(prev?.attempts||0)+1};pathProgress[id]=p;savePath()}
+function pathResult(s){if(!s.path||s.pathSaved)return;s.pathSaved=true;let {id,phase}=s.path,p=pathProgress[id]||{},prev=p[phase];p[phase]={correct:s.score,total:s.q.length,date:new Date().toISOString(),attempts:(prev?.attempts||0)+1};pathProgress[id]=p;savePath();window.HitzBiraAgenda?.observe(id,s.q.length>0&&s.score===s.q.length?"match":phase==="recall"?"unverified":"mismatch",phase==="recall",false,s)}
 function pathDone(l){const r=pathProgress[l.id]?.recall;return !!(r&&r.total&&r.correct===r.total)}
 function openPath(id){let l=PATH_LESSONS.find(x=>x.id===id);pathState.lesson=id;pathState.level=l.level;pathState.stage=0;pathState.reveal=false;render();if(typeof window!=="undefined")window.scrollTo(0,0)}
 function pathStart(l,phase){state.type=phase==="practice"?"choice":"write";state.n=5;start(phase==="practice"?pathPool(l):recallPool(l),{id:l.id,phase})}
