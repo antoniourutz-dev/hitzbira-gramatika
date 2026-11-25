@@ -58,13 +58,13 @@ function createAdaptive(curriculum){
  const titles={"IZE-1":"Izen-sintagma","V-0":"NOR eta NOR-NORK","ORT-1":"Ortografia","DEK-1":"Deklinabidea","JOS-1":"Joskera","ADI-1":"Aditz-izena"};
  const planFor=(id,input={})=>{const node=curriculum.get(id),route=curriculum.route(id);if(!node||!route)return null;const rows=refs(id,input);const rank={review:0,compare:1,unseen:2,observe:3,supported:4,recognition:5,recall:6,written_model_match:7,recall_model_match:7};
  const actionable=rows.filter(x=>rank[x.state]<7).sort((a,b)=>rank[a.state]-rank[b.state]||a.attempts-b.attempts||rows.indexOf(a)-rows.indexOf(b));if(!actionable.length)return null;
- const first=actionable[0],mode=first.kind==="lesson"?"lesson":route.family==="decl"||["compare","supported","recognition"].includes(first.state)||input.preferredMode==="write"?"write":"choose";
+ const novelty=["review","compare"].includes(input.lastIntent)?actionable.find(x=>x.state==="unseen"):null;const first=novelty||actionable[0],mode=first.kind==="lesson"?"lesson":route.family==="decl"||["compare","supported","recognition"].includes(first.state)||input.preferredMode==="write"?"write":"choose";
  const size=Math.max(1,Math.min(limit,count(input.size)||5)),pool=first.kind==="lesson"?[]:first.state==="unseen"?actionable.filter(x=>x.state==="unseen").slice(0,size).map(x=>x.key):[first.key];
  return Object.freeze({type:"curriculum",node:id,family:route.family,id:first.kind==="item"?first.key:null,lesson:first.kind==="lesson"?first.key:null,phase:first.kind==="lesson"&&first.state==="recall"?"recall":null,refs:Object.freeze(pool),exerciseMode:mode,intent:first.state,title:(titles[id]||id)+" · "+labels[first.state],why:reasons[first.state],policy,mode:"practice_only",academicEvidence:false,capabilityVersion:node.vid})};
  const pick=(input={})=>{const available=curriculum.nodes.filter(n=>curriculum.route(n.id)&&(!Array.isArray(input.scope)||input.scope.includes(curriculum.route(n.id).family))),plans=available.map(n=>planFor(n.id,input)).filter(Boolean);if(!plans.length)return null;const pmap=new Map(plans.map(p=>[p.node,p]));const targeted=plans.filter(p=>p.intent==="review"||p.intent==="compare");const prerequisite=targeted.filter(p=>p.intent==="review"&&available.some(n=>n.requires.includes(p.node)&&pmap.has(n.id)));
  const unseen=plans.filter(p=>p.intent==="unseen"),guided=plans.filter(p=>!["review","compare","unseen"].includes(p.intent));const ordered=[...prerequisite,...targeted,...unseen,...guided];const unique=[...new Map(ordered.map(p=>[p.node,p])).values()];
  // Reserve novelty after a repair when possible; a missing observation is never a prerequisite failure.
- if(input.lastIntent==="review"||input.lastIntent==="compare"){const novel=unseen.find(p=>p.node!==input.lastNode);if(novel)return novel}
+ if(input.lastIntent==="review"||input.lastIntent==="compare"){const novel=unseen.find(p=>p.node!==input.lastNode)||unseen[0];if(novel)return novel}
  return unique.find(p=>p.node!==input.lastNode)||unique[0]||null};
  return Object.freeze({policy,profile,planFor,pick});
 }
