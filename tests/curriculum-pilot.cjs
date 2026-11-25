@@ -44,7 +44,7 @@ function runCurriculumTests(src){
  ui.set({queue:[items[0]],pos:0,cancel:true});ui.startCurriculum("ADI-1");check("active practice protected",ui.get().events[0][0]==="go"&&ui.get().queue.length===1);ui.set({queue:[],cancel:false});
  ui.set({exam:{done:false}});ui.startCurriculum("ADI-1");check("active assessment protected",ui.get().events[0][0]==="go");ui.set({exam:null});
  ui.set({area:"noun"});check("explicit area keeps legacy selector",ui.recommendation().type!=="curriculum");
- const html=ui.curriculumPanel();check("57 objectives listed",api.nodes.every(n=>html.includes(n.id+" · "+n.claim)));check("only 7 pilot buttons",Array.from(html.matchAll(/onclick="startCurriculum\(/g)).length===7);
+ const html=ui.curriculumPanel();check("57 objectives listed",api.nodes.every(n=>html.includes(n.id+" · "+n.claim)));check("7 manual pilot buttons preserved",Array.from(html.matchAll(/onclick="startCurriculum\(/g)).length-Array.from(html.matchAll(/,null,true\)/g)).length===7);check("6 adaptive pilot buttons",Array.from(html.matchAll(/,null,true\)/g)).length===6);
  return checked;
 }
 const files=["core.js","app.js","aditzak/engine.js","legacy/decl.js","legacy/bank05.js","legacy/bank08.js"];
