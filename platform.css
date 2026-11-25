@@ -33,3 +33,109 @@ h1[tabindex="-1"]:focus{outline:none}
 .hb-world-scene{border:1px solid #d9cfea;border-left:4px solid #5b3cc4;border-radius:14px;padding:12px 14px;margin:10px 0;background:#f8f6ff;color:#30205b}.hb-world-scene h2{margin:2px 0 4px;font-size:1.05rem}.hb-world-scene p{margin:4px 0;line-height:1.45;font-size:.92rem}.hb-world-scene small{color:#554a6d}.hb-world-finale{border-left-color:#08796c;background:#eaf8f3}.hb-world-routes button:focus-visible{outline:3px solid #30205b;outline-offset:3px}
 @media(max-width:800px){.hb-world-grid{grid-template-columns:1fr}.hb-world-card{display:grid;grid-template-columns:minmax(70px,100px) minmax(0,1fr);align-items:start}.hb-world-art{grid-row:1/5}.hb-world-card .catalog-kicker,.hb-world-card h3,.hb-world-card p,.hb-world-routes{grid-column:2}.hb-world-art svg{max-width:100%}.hb-world{padding:14px}.hb-world-heading>.bira-art{width:64px}}
 @media(max-width:420px){.hb-world-card{display:flex}.hb-world-art{min-height:64px}.hb-world-art svg{height:64px}.hb-world-heading>.bira-art{display:none}}
+
+/* 1.8.0 · Self-hosted brand typography (Plus Jakarta Sans, Latin + Latin-Ext) */
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:400 800;font-display:swap;src:url("/fonts/plus-jakarta-sans-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:400 800;font-display:swap;src:url("/fonts/plus-jakarta-sans-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--font:"Plus Jakarta Sans",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{font-family:var(--font)}
+
+/* Aditza inline SVG icons */
+.hb-v-ico{display:inline-grid;place-items:center;flex:none;line-height:0}
+.hb-v-ico .ui-icon{width:20px;height:20px}
+.hb-ico-head{display:flex;align-items:center;gap:8px}
+.hb-ico-btn{display:inline-flex!important;align-items:center;justify-content:center;gap:8px}
+.hb-verb-surface .hub-icon .hb-v-ico .ui-icon{width:26px;height:26px}
+
+/* Praktikatu 3-level tabbed selector */
+.practice-hub{display:grid;gap:14px}
+.practice-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:6px;background:var(--brand-soft,#eee8fc);border:1px solid var(--line,#e2ddec);border-radius:16px}
+.practice-tabs button{flex:1 1 110px;min-height:44px;border-radius:12px;background:transparent;color:var(--muted,#5f526f);border:1px solid transparent;font-weight:750;font-size:14px}
+.practice-tabs button:hover{color:var(--brand-dark,#4327a0);background:rgba(255,255,255,.55);filter:none}
+.practice-tabs button.active{background:#fff;color:var(--brand-dark,#4327a0);border-color:var(--line,#e2ddec);box-shadow:0 2px 8px #30205b12}
+.practice-tab-panel{display:grid;gap:14px}
+.practice-tab-panel .verb-tools,.practice-tab-panel .goal-panel,.practice-tab-panel .assessment-entry{margin:0}
+.practice-quick-mini{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#fff8e7;border:1px solid #ecd69c;border-radius:16px;color:#5c420c;font-size:14px}
+.practice-quick-mini button{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#7a5409;border:1px solid #e2c574}
+
+/* Theme toggle button */
+.hb-theme-btn{width:40px;height:40px;min-height:40px!important;padding:0!important;display:inline-grid;place-items:center;border-radius:12px!important;flex:none}
+.hb-theme-btn .ui-icon{width:19px;height:19px}
+
+/* Pedagogical micro-interactions */
+@keyframes hb-step-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.session-question,.practice-tab-panel,.feedback-enter{animation:hb-step-in .22s cubic-bezier(.22,1,.36,1) both}
+.answer,.hb-world-routes button,.practice-mode,.cat-area,.cat-family{transition:transform .14s ease,border-color .15s ease,background-color .15s ease,box-shadow .15s ease}
+.answer:not(:disabled):active,.hb-world-routes button:active{transform:scale(.985)}
+.answer.good{box-shadow:0 0 0 2px rgba(23,96,60,.18)}
+@media(prefers-reduced-motion:reduce){.session-question,.practice-tab-panel,.feedback-enter{animation:none!important}.answer,.hb-world-routes button{transition:none!important}}
+
+/* WCAG AA Dark Mode (optional, respects prefers-color-scheme and user toggle) */
+html[data-theme="dark"]{
+ --bg:#131120;--ink:#f3f1fc;--muted:#b7b0ce;--line:#342e52;
+ --v:#9e86ff;--brand-dark:#d4c8ff;--brand-soft:#262044;
+ --teal:#4dd4be;--teal-soft:#132f2b;--blue:#7da6ff;--blue-soft:#192542;
+ --amber:#f5c25b;--amber-soft:#332712;--rose:#f288ad;--rose-soft:#381a28;
+ --hb-ink:#f3f1fc;--hb-muted:#b7b0ce;--hb-brand:#9e86ff;--hb-brand-dark:#d4c8ff;
+ --hb-sea:#162733;--hb-paper:#1c192e;--hb-canvas:#131120;--hb-line:#342e52;
+ --shadow:0 8px 26px rgba(0,0,0,.38);
+ color-scheme:dark;
+}
+html[data-theme="dark"] .cat-noun{--cat:#a992ff;--cat-dark:#d4c8ff;--cat-soft:#262044;--cat-line:#463b78}
+html[data-theme="dark"] .cat-verb{--cat:#4dd4be;--cat-dark:#7de3d1;--cat-soft:#132f2b;--cat-line:#265d53}
+html[data-theme="dark"] .cat-clause{--cat:#7da6ff;--cat-dark:#aec7ff;--cat-soft:#192542;--cat-line:#31497d}
+html[data-theme="dark"] .cat-compare{--cat:#f5c25b;--cat-dark:#ffd98a;--cat-soft:#332712;--cat-line:#695023}
+html[data-theme="dark"] .cat-text{--cat:#f288ad;--cat-dark:#ffb3ce;--cat-soft:#381a28;--cat-line:#6e314d}
+html[data-theme="dark"] body{background:radial-gradient(ellipse at 85% 0,#251d47 0,transparent 38rem),#131120;color:#f3f1fc}
+html[data-theme="dark"] header,html[data-theme="dark"] nav{background:rgba(20,17,34,.92);border-color:#342e52}
+html[data-theme="dark"] .brand{color:#f3f1fc}
+html[data-theme="dark"] .brand-accent{color:#b5a2ff}
+html[data-theme="dark"] .hb-top-nav button{color:#c4bddb}
+html[data-theme="dark"] .hb-top-nav button:hover{background:#262044;color:#f3f1fc}
+html[data-theme="dark"] .hb-top-nav button.active,html[data-theme="dark"] nav button.active{background:#2d2552;color:#e4dcff;border-color:#4b3f82}
+html[data-theme="dark"] nav button{background:transparent;color:#b7b0ce}
+html[data-theme="dark"] .panel,html[data-theme="dark"] .tile,html[data-theme="dark"] .learn-step,html[data-theme="dark"] .session-question,html[data-theme="dark"] .goal-panel,html[data-theme="dark"] .home-goal-summary,html[data-theme="dark"] .focus-choice,html[data-theme="dark"] .cat-area,html[data-theme="dark"] .cat-family,html[data-theme="dark"] .cat-lesson,html[data-theme="dark"] .practice-mode,html[data-theme="dark"] .assessment-entry,html[data-theme="dark"] .hb-world-card,html[data-theme="dark"] .hb-chapter,html[data-theme="dark"] .hb-cast-card,html[data-theme="dark"] .hb-login-card,html[data-theme="dark"] .journey-family,html[data-theme="dark"] .milestone,html[data-theme="dark"] .lab-studio,html[data-theme="dark"] .adventure-map,html[data-theme="dark"] .journey-next,html[data-theme="dark"] .catalog-controls{background:#1c192e;border-color:#342e52;color:#f3f1fc}
+html[data-theme="dark"] .learning-hero,html[data-theme="dark"] .catalog-hero{background:linear-gradient(135deg,#211c3a,#1b2438);border-color:#342e52;color:#f3f1fc}
+html[data-theme="dark"] .learning-hero h1,html[data-theme="dark"] .catalog-hero h1,html[data-theme="dark"] .hb-world-card h3,html[data-theme="dark"] .hb-world-scene h2,html[data-theme="dark"] .hb-login-brand h1,html[data-theme="dark"] .hb-login-brand>span,html[data-theme="dark"] #hb-login-form label{color:#f3f1fc}
+html[data-theme="dark"] .hb-world-scene,html[data-theme="dark"] .hb-dialogue,html[data-theme="dark"] .hb-story-bridge,html[data-theme="dark"] .bira-tip,html[data-theme="dark"] .learn-rule,html[data-theme="dark"] .learn-example,html[data-theme="dark"] .learn-contrast,html[data-theme="dark"] .visual-map,html[data-theme="dark"] .source-part,html[data-theme="dark"] .lab-model,html[data-theme="dark"] .lab-context,html[data-theme="dark"] .lab-assembled,html[data-theme="dark"] .feedback-compare,html[data-theme="dark"] .option-explain,html[data-theme="dark"] .journey-metrics>div,html[data-theme="dark"] .assessment-stats>div,html[data-theme="dark"] .practice-quick-mini{background:#231f3a;border-color:#3b345c;color:#f3f1fc}
+html[data-theme="dark"] .hb-world-finale{background:#132c28;border-left-color:#4dd4be}
+html[data-theme="dark"] .answer{background:#211d36;border-color:#3c3560;color:#f3f1fc}
+html[data-theme="dark"] .answer:hover:not(:disabled){border-color:#9e86ff;background:#292347}
+html[data-theme="dark"] .answer.good,html[data-theme="dark"] .feedback.good{background:#143326;border-color:#3fb581;color:#bff5d9}
+html[data-theme="dark"] .answer.bad,html[data-theme="dark"] .feedback.bad{background:#3a1820;border-color:#e06c7a;color:#ffd0d6}
+html[data-theme="dark"] .feedback.contrast{background:#332712;border-color:#d89c3a;color:#ffe6b3}
+html[data-theme="dark"] .alt,html[data-theme="dark"] .chips button,html[data-theme="dark"] .hb-world-map-link{background:#2a244a;color:#e0d6ff;border-color:#443a73}
+html[data-theme="dark"] .practice-tabs{background:#171428;border-color:#342e52}
+html[data-theme="dark"] .practice-tabs button:not(.active){background:transparent;border-color:transparent;color:#b7b0ce}
+html[data-theme="dark"] .practice-tabs button.active{background:#32295c;color:#ffffff;border-color:#6857b5;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] #hb-login-form input{background:#151226;color:#f3f1fc;border-color:#433b6b}
+html[data-theme="dark"] .hb-gold .map-world.hb-atlas{background:#162733;border-color:#2c4a5e}
+html[data-theme="dark"] .hb-gold .hb-atlas .map-stop{background:rgba(28,25,46,.94);color:#f3f1fc;border-color:#3e3761}
+html[data-theme="dark"] .hb-gold .hb-atlas .map-stop strong{color:#f3f1fc}
+html[data-theme="dark"] .hb-gold .hb-atlas .map-stop small{color:#b7b0ce}
+html[data-theme="dark"] .hb-gold .hb-world-routes button{background:#282246;color:#e4dcff;border-color:#433970}
+html[data-theme="dark"] .hb-gold .hb-world-routes button:hover{background:#352d5c}
+html[data-theme="dark"] .hb-garden{background:linear-gradient(120deg,#132d27,#1c192e);border-color:#27584d;color:#c9f5ea}
+html[data-theme="dark"] .hb-garden-copy small{color:#9ad6c8}
+html[data-theme="dark"] .hb-petal{border-color:#2d6659;color:#6eb8a6}
+html[data-theme="dark"] .hb-petal.grown{background:#5c4312;color:#ffdc79;border-color:#b38629}
+html[data-theme="dark"] .hb-verb-surface{--ink:#f3f1fc;--muted:#b7b0ce;--line:#342e52;--bg:#131120}
+html[data-theme="dark"] .hb-verb-surface .panel,html[data-theme="dark"] .hb-verb-surface .hub-card,html[data-theme="dark"] .hb-verb-surface .path-unit,html[data-theme="dark"] .hb-verb-surface .system,html[data-theme="dark"] .hb-verb-surface .game-card,html[data-theme="dark"] .hb-verb-surface .tr-card,html[data-theme="dark"] .hb-verb-surface .lab-role,html[data-theme="dark"] .hb-verb-surface .quiz-options .opt,html[data-theme="dark"] .hb-verb-surface .question{background:#1c192e;border-color:#342e52;color:#f3f1fc}
+html[data-theme="dark"] .hb-verb-surface .learning-hero,html[data-theme="dark"] .hb-verb-surface .lab-live-result:not(.lab-missing),html[data-theme="dark"] .hb-verb-surface .lab-mini-lesson,html[data-theme="dark"] .hb-verb-surface .stats div,html[data-theme="dark"] .hb-verb-surface th,html[data-theme="dark"] .verb-crosslink{background:#132f2b;border-color:#265d53;color:#c9f5ea}
+html[data-theme="dark"] .hb-verb-surface .learning-hero h1,html[data-theme="dark"] .hb-verb-surface .lab-live-result:not(.lab-missing) h2,html[data-theme="dark"] .hb-verb-surface .hub-card strong,html[data-theme="dark"] .hb-verb-surface .eyebrow,html[data-theme="dark"] .verb-crosslink strong{color:#7de3d1}
+html[data-theme="dark"] .hb-verb-surface button.secondary,html[data-theme="dark"] .hb-verb-surface .lab-choice,html[data-theme="dark"] .hb-verb-surface .lab-hitano{background:#231f3a;border-color:#3d3663;color:#e4dcff}
+html[data-theme="dark"] .hb-verb-surface .lab-choice.active{background:#0e6b5e;border-color:#4dd4be;color:#fff}
+html[data-theme="dark"] .hb-verb-surface .lab-system{background:#231f3a;color:#e4dcff}
+html[data-theme="dark"] .hb-verb-surface .question h2{color:#f3f1fc}
+html[data-theme="dark"] .hb-verb-surface td,html[data-theme="dark"] .hb-verb-surface tr th:first-child{background:#1c192e;border-color:#342e52;color:#f3f1fc}
+html[data-theme="dark"] .hb-verb-surface .matrix .cell{background:#262044;border-color:#433970;color:#e4dcff}
+html[data-theme="dark"] .hb-verb-surface .note,html[data-theme="dark"] .hb-verb-surface .learn-intro,html[data-theme="dark"] .hb-verb-surface .selection-summary{background:#231f3a;color:#d6d0eb}
+html[data-theme="dark"] .hb-verb-surface .quiz-dock{background:#1c192e;border-color:#342e52}
+html[data-theme="dark"] .hb-verb-surface .quiz-options .opt.ok,html[data-theme="dark"] .hb-verb-surface .feedback.ok{background:#143326;border-color:#3fb581;color:#bff5d9}
+html[data-theme="dark"] .hb-verb-surface .quiz-options .opt.bad,html[data-theme="dark"] .hb-verb-surface .feedback.bad{background:#3a1820;border-color:#e06c7a;color:#ffd0d6}
+html[data-theme="dark"] .hb-verb-progress .journey-metrics>div{background:#132f2b;border-color:#265d53}
+html[data-theme="dark"] .hb-verb-progress .journey-metrics strong{color:#7de3d1}
+html[data-theme="dark"] .note,html[data-theme="dark"] small,html[data-theme="dark"] .muted,html[data-theme="dark"] .hb-world-card p,html[data-theme="dark"] .hb-world-heading p{color:#b7b0ce}
+html[data-theme="dark"] a{color:#b5a2ff}
+html[data-theme="dark"] .hb-brand-link{color:#f3f1fc}
+
