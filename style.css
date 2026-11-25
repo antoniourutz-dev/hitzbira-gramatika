@@ -414,3 +414,28 @@ button:disabled{cursor:default}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .pending-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pending-list button{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+
+/* GOLD 03 · focused home and answer-neutral practice */
+.cat-neutral{--cat:#5b3cc4;--cat-dark:#4327a0;--cat-soft:#eee8fc;--cat-line:#d9cef7}
+.focus-home{gap:20px}
+.focus-home .welcome{min-height:265px}
+.home-goal-summary{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px 20px;box-shadow:var(--shadow)}
+.focus-symbol{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--cat-soft);color:var(--cat-dark);flex-shrink:0}
+.home-goal-summary>div{flex:1;min-width:0}
+.home-goal-summary h2{font-size:19px;margin:0}
+.home-goal-summary p{font-size:14px;color:var(--muted);margin:3px 0}
+.focus-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.focus-choice{display:flex;align-items:center;gap:13px;text-align:left;padding:15px 18px;background:white;color:var(--ink);border:1px solid var(--cat-line);border-radius:18px!important;box-shadow:var(--shadow);min-width:0}
+.focus-choice .island-art{width:82px;height:auto;aspect-ratio:124/106;flex-shrink:0}
+.focus-choice>span{flex:1;min-width:0}
+.focus-choice strong{display:block;font-size:18px;line-height:1.35;color:var(--cat-dark)}
+.focus-choice small{display:block;font-size:13px;line-height:1.4;margin-top:4px;font-weight:400}
+.focus-choice>.ui-icon{color:var(--cat-dark);width:20px;height:20px}
+.session-question{padding:clamp(18px,3vw,28px)}
+.session-question h1{font-size:clamp(23px,3vw,32px);font-weight:700;line-height:1.4;letter-spacing:-.02em;margin:12px 0 20px}
+.session-bira{margin-bottom:12px}
+.session-top{font-size:14px}
+.feedback-contrast{border-top:1px solid currentColor;padding-top:10px}
+@media(hover:hover){.focus-choice:hover{border-color:var(--cat);transform:translateY(-2px);filter:none!important}}
+@media(max-width:600px){.focus-home{gap:16px}.focus-choices{grid-template-columns:1fr;gap:10px}.focus-choice{padding:12px 14px;gap:10px}.focus-choice .island-art{width:64px}.home-goal-summary{padding:13px;gap:10px}.focus-symbol{width:40px;height:40px}.home-goal-summary h2{font-size:17px}.home-goal-summary p{font-size:12px}.focus-home .welcome{min-height:0}}
+@media(prefers-reduced-motion:reduce){.focus-choice:hover{transform:none}}
