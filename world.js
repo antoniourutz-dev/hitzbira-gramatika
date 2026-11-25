@@ -29,3 +29,23 @@ function completed(run,queue,pos,results){
 function freeze(x){if(x&&typeof x==="object"&&!Object.isFrozen(x)){Object.values(x).forEach(freeze);Object.freeze(x)}return x}
 window.HitzBiraWorld=Object.freeze({version:"0.1.0",missions:freeze(missions),resolve,completed});
 })();
+
+/* P1.04: controlled sandbox adapter, no private WORLD drafts or academic evidence. */
+function createWorldJourney(curriculum,adaptive,world){
+ const policy="HB-WORLD/0.1.0-p1.04-sandbox";
+ // Narrative thematic suggestions, NOT reviewed semantic curriculum crosswalks.
+ const islands=Object.freeze({noun:Object.freeze(["IZE-1","DEK-1"]),verb:Object.freeze(["V-0","ADI-1"]),clause:Object.freeze([]),compare:Object.freeze([]),text:Object.freeze(["ORT-1","JOS-1"])});
+ const themes=Object.freeze({storm:Object.freeze(["DEK-1","JOS-1"]),message:Object.freeze(["ORT-1","JOS-1"]),festival:Object.freeze(["IZE-1","V-0","ADI-1"])});
+ const labels=Object.freeze({"IZE-1":"Izen-sintagma","DEK-1":"Deklinabidea","V-0":"NOR eta NOR-NORK","ADI-1":"Aditz-izena","ORT-1":"Ortografia","JOS-1":"Joskera"});
+ const active=id=>!!curriculum.get(id)&&!!curriculum.route(id);
+ const summarize=(ids,input={},agenda=null)=>ids.filter(active).map(id=>{const p=adaptive.profile(id,input),rows=(agenda?.agenda(input)||[]).filter(r=>r.node===id);return Object.freeze({id,label:labels[id]||id,seen:p.seen,total:p.total,review:p.review,compare:p.compare,written:p.written,due:rows.filter(r=>r.status==="due").length,scheduled:rows.filter(r=>r.status==="scheduled").length,academicEvidence:false})});
+ const planFor=(ids,input={},agenda=null)=>{const allowed=ids.filter(active),plans=allowed.map(id=>adaptive.planFor(id,input)).filter(Boolean),due=allowed.map(id=>agenda?.plan(input,id)).filter(Boolean).sort((a,b)=>a.due-b.due||curriculum.get(a.node).ord-curriculum.get(b.node).ord);
+ const repair=plans.find(p=>["review","compare"].includes(p.intent)),novel=plans.find(p=>p.intent==="unseen"&&p.node!==input.lastNode)||plans.find(p=>p.intent==="unseen");const p=repair||(input.lastIntent==="spaced"&&novel)||due[0]||plans[0]||null;
+ return p&&allowed.includes(p.node)?Object.freeze({...p,worldPolicy:policy,academicEvidence:false,mode:"practice_only"}):null};
+ const island=(id,input={},agenda=null)=>Object.freeze({id,rows:summarize(islands[id]||[],input,agenda),plan:planFor(islands[id]||[],input,agenda),open:Object.hasOwn(islands,id),academicEvidence:false});
+ const mission=(id,input={},agenda=null)=>{const m=world.missions.find(x=>x.id===id);return m?Object.freeze({id,rows:summarize(themes[id]||[],input,agenda),plan:planFor(themes[id]||[],input,agenda),open:true,academicEvidence:false}):null};
+ const context=(kind,id,input={},agenda=null)=>kind==="island"?island(id,input,agenda):kind==="mission"?mission(id,input,agenda):null;
+ const outcome=(run,queue,pos,results)=>{if(!world.completed(run,queue,pos,results)||results.some(r=>!["match","incorrect","unverified"].includes(r.result)))return null;return Object.freeze({state:"visited",prepared:results.length,matching:results.filter(r=>r.result==="match").length,review:results.filter(r=>r.result==="incorrect").length,compare:results.filter(r=>r.result==="unverified").length,assisted:results.filter(r=>r.assisted===true).length,openTask:"not_observed",academicEvidence:false,validatedResolution:false})};
+ return Object.freeze({policy,island,mission,context,outcome});
+}
+window.HitzBiraWorldJourney=createWorldJourney(window.HitzBiraCurriculum,window.HitzBiraAdaptive,window.HitzBiraWorld);
