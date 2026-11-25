@@ -1,0 +1,75 @@
+{
+  "id": "HB-UI-001",
+  "version": "1.0.0",
+  "status": "review",
+  "baseCommit": "897ae2b6d8e9e5f10191835ea7d8c21f92da5eb2",
+  "scope": "preview branch; no main, database, assessment, or synchronization modifications",
+  "foundations": {
+    "font": "existing Plus Jakarta Sans",
+    "palette": {
+      "brand": "#5B3CC4",
+      "ink": "#30234C",
+      "canvas": "#FAF9F5",
+      "gold": "#FFDC79",
+      "mint": "#B9F2DE",
+      "sea": "#DEEDF0"
+    },
+    "spacing": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "radius": [
+      12,
+      16,
+      22,
+      28
+    ],
+    "motion": [
+      120,
+      180,
+      240,
+      280,
+      360,
+      480,
+      720
+    ]
+  },
+  "components": [
+    "Button",
+    "Navigation",
+    "TerritoryCard",
+    "LessonCard",
+    "LearningHero",
+    "LessonStepper",
+    "GrammarExample",
+    "AnswerChoice",
+    "Feedback",
+    "LabPanel",
+    "ProgressTrack",
+    "WorldCard",
+    "BiraTip",
+    "VerbTabs",
+    "SoundSettings"
+  ],
+  "application": [
+    "home",
+    "catalog",
+    "lesson",
+    "practice",
+    "verbs",
+    "journey",
+    "world"
+  ],
+  "assets": {
+    "bira": "existing v0.2 in repository; pending final artistic validation",
+    "illustrations": "existing World atlas; no replacement with new Illustration System assets",
+    "icons": "4 exact paths from Icon System",
+    "motion": "duration tokens and state/progress transitions; no autoplay Bira in home",
+    "sound": "explicit preview in kit only; no audio added to real academic flow"
+  },
+  "qa": "preview visual review required; no academic revalidation"
+}
