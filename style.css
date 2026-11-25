@@ -412,3 +412,5 @@ button:disabled{cursor:default}
 @media(max-width:700px){.welcome-bira{min-height:180px}.welcome-bira .bira-art{width:clamp(120px,29vw,200px)}.home-screen,.learning-screen,.catalog-screen{gap:16px}}
 @media(max-width:440px){.welcome{min-height:0;grid-template-columns:minmax(0,1fr)}.welcome-copy{padding:22px 20px 6px}.welcome-bira{min-height:0;padding:8px 15px 18px}.welcome-bira .bira-art{width:155px;height:auto}.welcome h1{font-size:36px}.adventure-head .bira-art{width:62px}.map-stop .island-art{width:min(100%,92px);height:auto}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.pending-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pending-list button{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
