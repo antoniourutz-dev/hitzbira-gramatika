@@ -91,10 +91,12 @@ let info=panel();info.append(el("small","Pilotua: zuka, sei pertsona; oraina eta
 function unusedQuizViewport(){if(typeof window==="undefined")return;const v=window.visualViewport;if(v&&Math.abs(v.scale-1)<.01){root.style.setProperty("--quiz-vh",v.height+"px");root.style.setProperty("--quiz-top",v.offsetTop+"px")}else{root.style.removeProperty("--quiz-vh");root.style.removeProperty("--quiz-top")}}
 function quizLayout(){
  const p=root.lastElementChild;if(!p||!p.className.includes("quiz-panel"))return;
- const children=Array.from(p.children),content=el("div",undefined,"quiz-content"),dock=el("div",undefined,"quiz-dock"),optionGroup=el("div",undefined,"quiz-options");let companion=el("div",undefined,"session-bira verb-companion");companion.innerHTML=mascot("think")+'<span>Pentsatu lasai. Zure erritmoan.</span>';
+ const children=Array.from(p.children),content=el("div",undefined,"quiz-content"),dock=el("div",undefined,"quiz-dock"),optionGroup=el("div",undefined,"quiz-options");
  const next=children.find(x=>x.tagName==="BUTTON"&&x.textContent==="Jarraitu →");
  const finish=children.find(x=>x.tagName==="BUTTON"&&(x.textContent==="Itzuli"||x.textContent==="Itzuli trinkoetara"));
  const feedback=children.find(x=>x.classList.contains("feedback"));let submit=children.find(x=>x.tagName==="BUTTON"&&x.textContent==="Egiaztatu"),form=children.find(x=>x.tagName==="FORM");
+ const fbOk=feedback&&feedback.classList.contains("ok");
+ let companion=el("div",undefined,"session-bira verb-companion");companion.innerHTML=mascot(feedback?(fbOk?"calm":"retry"):"think")+'<span>'+(feedback?(fbOk?"Ongi! Jarraitu zure erritmoan.":"Begiratu ereduari eta saiatu berriro."):"Pentsatu lasai. Zure erritmoan.")+'</span>';
  if(form){let candidate=Array.from(form.children).find(x=>x.tagName==="BUTTON"&&x.type==="submit");if(candidate&&!candidate.disabled&&!next){form.id="quiz-answer-form";candidate.setAttribute("form",form.id);submit=candidate}else if(candidate&&candidate.disabled)candidate.remove()}
  let opts=children.filter(x=>x.classList.contains("opt"));if(opts.some(x=>x.textContent.includes("NOR:")||x.textContent.includes("NORK:")))optionGroup.classList.add("role-options");
  let grouped=false;for(let x of children){if(x===next||x===finish||x===submit)continue;if(opts.includes(x)){if(!grouped){content.append(optionGroup);grouped=true}optionGroup.append(x)}else{content.append(x)}}

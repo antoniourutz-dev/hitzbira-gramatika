@@ -8,7 +8,7 @@
 
 .hb-login-card{background:white;border:1px solid #E4DFF1;border-radius:28px;padding:30px;width:min(100%,420px);box-shadow:0 20px 70px #211c3815;color:#211c38}
 .hb-login-brand{text-align:center}.hb-login-brand>span{font-weight:800;letter-spacing:.1em;color:#211c38;font-size:13px}.hb-login-brand>span span{color:#5b3cc4}
-.hb-login-bira{height:145px;display:flex;justify-content:center}.hb-login-bira svg{height:100%;width:170px;max-width:100%}
+.hb-login-bira{height:140px;display:flex;justify-content:center;align-items:center}.hb-login-bira svg,.hb-login-bira .bira-art{height:100%;width:auto;max-width:100%;aspect-ratio:1/1;object-fit:contain}
 .hb-login-brand h1{font-size:32px;line-height:1.1;margin:8px 0;color:#211c38;font-weight:800}.hb-login-brand p{margin:8px 0 25px;color:#625b73;font-size:16px}
 #hb-login-form{display:grid;gap:9px;margin:0}#hb-login-form label{font-size:14px;font-weight:700;color:#211c38;margin-top:5px}#hb-login-form input{width:100%;box-sizing:border-box;min-height:50px;background:#FAF9FC;color:#211c38;border:1px solid #D7D0E6;padding:12px;border-radius:12px;font:inherit}#hb-login-form input:focus{outline:3px solid #C5B6FF;border-color:#5b3cc4}
 #hb-login-submit{margin-top:10px;background:#5B3CC4;color:white;border:0;border-radius:13px;min-height:50px;font-size:16px;font-weight:750;width:100%;cursor:pointer}#hb-login-submit:disabled{opacity:.65;cursor:wait}#hb-login-message{font-size:13px;color:#9b2854;margin:3px 0 0;min-height:18px;line-height:1.45}
@@ -210,6 +210,16 @@ html[data-theme="dark"] .lab-eq-chip{background:#1c192e;color:#f3f1fc}
 html[data-theme="dark"] .lab-eq-op{color:#7de3d1}
 html[data-theme="dark"] .hb-atlas-bento .map-detail{background:#1c192e;border-color:#342e52;color:#f3f1fc}
 html[data-theme="dark"] .hb-footer-inner{border-color:#342e52}
+/* Bira v0.2 dark-mode contrast rim & cast avatar framing */
+.hb-cast-avatar .bira-art{width:36px;height:36px;object-fit:contain}
+html[data-theme="dark"] .bira-art{filter:drop-shadow(0 0 1.4px rgba(255,248,228,.95)) drop-shadow(0 0 1px rgba(255,248,228,.9)) drop-shadow(0 6px 12px rgba(0,0,0,.35))}
+html[data-theme="dark"] .hb-cast-avatar .bira-art{filter:none}
+html[data-theme="dark"] .welcome-bira .bira-art{filter:drop-shadow(0 0 1.6px rgba(255,248,228,.95)) drop-shadow(0 0 1px rgba(255,248,228,.9)) drop-shadow(0 12px 18px rgba(0,0,0,.42))}
+html[data-theme="dark"] .feedback-pair>div{background:rgba(19,17,32,.6);border:1px solid rgba(255,255,255,.12);color:#f3f1fc}
+html[data-theme="dark"] .feedback-pair small{color:#c9c2e0}
+html[data-theme="dark"] .hb-cast-card h3,html[data-theme="dark"] .hb-chapter-copy h3{color:#f3f1fc}
+html[data-theme="dark"] .hb-cast-card strong{color:#c5b6ff}
+html[data-theme="dark"] .hb-cast-card p,html[data-theme="dark"] .hb-chapter-copy p{color:#c2bad8}
 @media(prefers-reduced-motion:reduce){.hb-slot.filled,.lesson-panel{animation:none!important}}
 
 
