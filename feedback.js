@@ -513,3 +513,78 @@ const G06_NOTES = {
     "Baldintzazko ba- eta du marratxoz bereizi dira; badu elkartuta idazten da."
   ]
 };
+
+const G06_ASSESS = {
+  "G04-E-01": [
+    "Parkera jomuga da; jolastu ginen esaldian kokapena eskatzen da.",
+    "Parketik abiapuntua da; hemen kokapena eskatzen da."
+  ],
+  "G04-E-02": [
+    "Motxila mugagabeko eredua izan daiteke; hemen bi motxila jakinez ari gara.",
+    "Motxilari datiboa da; hemen subjektu absolutibo plurala da."
+  ],
+  "G04-E-03": [
+    "Gabe gabezia adierazteko erabiltzen da; hemen hizpidea da.",
+    "Ordez ordezkapena adierazteko erabiltzen da; hemen hizpidea da."
+  ],
+  "G04-E-04": [
+    "Ibiltzera jomuga adierazteko erabil daiteke; hemen ikasi aditzaren osagarria da.",
+    "Ibiltzeak ergatiboko forma da; hemen ikasitako jarduera adierazi nahi da."
+  ],
+  "G04-E-05": [
+    "Da NOR eredukoa da; hemen egilea, hartzailea eta objektua daude.",
+    "Ditu NOR-NORK eredukoa da; gainera arkatza singularra da."
+  ],
+  "G04-E-06": [
+    "Nahi desioa da; atazak ohitura eskatzen du.",
+    "Behar premia da; atazak ohitura eskatzen du."
+  ],
+  "G04-E-07": [
+    "Dela adierazpen-osagarria da; hemen zehar-galdera dago.",
+    "Delako kausazko forma izan daiteke; hemen zein ordutan galdetzen da."
+  ],
+  "G04-E-08": [
+    "Dugula adierazpen-osagarria da; hemen filma zehazten da.",
+    "Dugulako kausa adierazteko erabil daiteke; hemen erlatiboa lantzen da."
+  ],
+  "G04-E-09": [
+    "Baldintzak ekintza gertatzeko betekizuna adierazten du; hemen aurrekotasuna da.",
+    "Helburuak xedea adierazten du; hemen noiz erosi den esaten da."
+  ],
+  "G04-E-10": [
+    "Helburua xedea da; hemen oinez etortzeko arrazoia da.",
+    "Baldintza betekizuna da; hemen gertatutakoaren arrazoia azaltzen da."
+  ],
+  "G04-E-11": [
+    "Denborak noiz adierazten du; hemen zertarako sartu den adierazten da.",
+    "Baldintzak betekizuna ematen du; hemen xedea da."
+  ],
+  "G04-E-12": [
+    "Konparazioak elementuak alderatzen ditu; hemen joateko betekizuna jartzen da.",
+    "Helburuak xedea adierazten du; hemen baldintza dago."
+  ],
+  "G04-E-13": [
+    "Helburuak xedea ematen du; hemen oztopoa onartuta ere ekintza gertatu da.",
+    "Konparazioak elementuak alderatzen ditu; hemen oztopoa eta ekintza lotzen dira."
+  ],
+  "G04-E-14": [
+    "Arinena superlatiboa da; bi bizikleta alderatzen dira.",
+    "Arinak dira pluraleko predikatua da; hemen bizikleta singularra eta konparazioa daude."
+  ],
+  "G04-E-15": [
+    "Adibidez kasu zehatza emateko da; hemen aurreko egoeraren ondorioa da.",
+    "Gainera informazioa gehitzeko da; hemen ondorioa lotzen da."
+  ],
+  "G04-E-16": [
+    "Mirenek galderan emandako pertsona da; zer galderak objektua eskatzen du.",
+    "Du laguntzailea da; zer galderak erositakoa eskatzen du."
+  ],
+  "G04-E-17": [
+    "Beraz ondorioa da; hemen ukatutako aukera ordezkatzen da.",
+    "Gainera emendioa da; hemen zukua ukatu eta ura hautatzen da."
+  ],
+  "G04-E-18": [
+    "Deia eta agindua bereizteko koma falta da.",
+    "Koma aditzaren eta hona-ren artean jarri da, ez Unai deiaren ondoren."
+  ]
+};
