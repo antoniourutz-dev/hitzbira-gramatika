@@ -1,0 +1,18 @@
+{
+  "version": "0.10.1",
+  "scope": "14 guided lessons, 3 internal levels, all 44 existing auxiliary blocks; synthetic verbs accessible separately",
+  "tests": [
+    "28 model keys validated",
+    "44 blocks covered",
+    "14 lesson pools and rendering",
+    "14 contrast reveals and transfer prompts",
+    "complete choice and recall sessions with saved results",
+    "bank byte-identical",
+    "script syntax"
+  ],
+  "firstLesson": {
+    "practice": 5,
+    "recall": 4
+  },
+  "limits": "DOM simulation, not device browser. Independent linguistic audit and open-task assessment pending; no official CEFR claims."
+}

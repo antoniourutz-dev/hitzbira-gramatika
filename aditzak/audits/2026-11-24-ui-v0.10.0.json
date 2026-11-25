@@ -1,0 +1,19 @@
+{
+  "version": "0.10.0",
+  "scope": "Navigation and homepage; no changes to paradigms/examples",
+  "tests": [
+    "home and prior local progress",
+    "quick challenge and return",
+    "fun challenge",
+    "7 lessons and return",
+    "separate lab and matrix",
+    "synthetic study and play",
+    "play and fixed dock",
+    "progress and review"
+  ],
+  "counts": {
+    "auxiliary": 1867,
+    "synthetic": 144
+  },
+  "limits": "DOM simulation and syntax only, no real-device browser visual test. Progress metrics unification and full module refactor deferred."
+}

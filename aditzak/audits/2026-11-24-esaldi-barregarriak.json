@@ -1,0 +1,667 @@
+{
+  "version": "0.9.9",
+  "scope": "Original humorous practice sentences; no paradigm changes",
+  "auxiliary": [
+    {
+      "id": "0|0|ni",
+      "form": "naiz",
+      "sentence": "Ni pijamaz joan ____ eskolara: autobusa ez zegoen zain!"
+    },
+    {
+      "id": "0|0|hura",
+      "form": "da",
+      "sentence": "Gure katua kaxa batean lokartu ____: bost izarreko hotela omen da."
+    },
+    {
+      "id": "0|0|gu",
+      "form": "gara",
+      "sentence": "Gu pizzaren bila etorri ____, ez etxeko lanen bila!"
+    },
+    {
+      "id": "0|0|zuek",
+      "form": "zarete",
+      "sentence": "Zuek txokolatearen detektibeak ____."
+    },
+    {
+      "id": "0|0|haiek",
+      "form": "dira",
+      "sentence": "Pinguinoak izotz gainean dantzatzen ari ____."
+    },
+    {
+      "id": "0|1|ni",
+      "form": "nintzen",
+      "sentence": "Atzo galtzerdi bana jantzita atera ____ etxetik."
+    },
+    {
+      "id": "0|1|gu",
+      "form": "ginen",
+      "sentence": "Atzo gu ogi bila joan ____, eta pastelarekin itzuli ginen."
+    },
+    {
+      "id": "0|1|zu",
+      "form": "zinen",
+      "sentence": "Atzo zu zineman lo geratu ____; filma amaitu eta gero esnatu zinen!"
+    },
+    {
+      "id": "0|1|haiek",
+      "form": "ziren",
+      "sentence": "Atzo ahateak eskolako patioan agertu ____."
+    },
+    {
+      "id": "0|2|ni",
+      "form": "banintz",
+      "sentence": "Ni inurria ____, gaileta bat niretzat etxe oso bat izango litzateke."
+    },
+    {
+      "id": "0|2|hura",
+      "form": "balitz",
+      "sentence": "Gure katua irakaslea ____, atsedenaldia bi ordukoa izango litzateke."
+    },
+    {
+      "id": "0|2|gu",
+      "form": "bagina",
+      "sentence": "Gu mamuak ____, ez genuke aterik irekiko."
+    },
+    {
+      "id": "0|3|ni",
+      "form": "nintzateke",
+      "sentence": "Hegalak banitu, eskolara hegan joango ____."
+    },
+    {
+      "id": "0|3|hura",
+      "form": "litzateke",
+      "sentence": "Munduan brokolirik ez balego, nire anaia pozik egongo ____."
+    },
+    {
+      "id": "0|3|haiek",
+      "form": "lirateke",
+      "sentence": "Oiloek patinak balituzte, patinatzen arituko ____."
+    },
+    {
+      "id": "0|4|ni",
+      "form": "nintzatekeen",
+      "sentence": "Autobusa galdu ez banu, garaiz iritsiko ____."
+    },
+    {
+      "id": "0|4|gu",
+      "form": "ginatekeen",
+      "sentence": "Mapa buruz behera jarri ez bagenu, lehenago iritsiko ____."
+    },
+    {
+      "id": "0|5|ni",
+      "form": "naiteke",
+      "sentence": "Ni ere sar ____ kartoizko gazteluan?"
+    },
+    {
+      "id": "0|5|gu",
+      "form": "gaitezke",
+      "sentence": "Gu galtzerdiak eskuetan ditugula ibil ____?"
+    },
+    {
+      "id": "0|5|hura",
+      "form": "daiteke",
+      "sentence": "Robot bat ere nekatu ____?"
+    },
+    {
+      "id": "0|5|haiek",
+      "form": "daitezke",
+      "sentence": "Pinguinoak izotz gainean irristatu ____."
+    },
+    {
+      "id": "0|6|ni",
+      "form": "nintekeen",
+      "sentence": "Txikitan, ni mahai azpian ezkuta ____ inork ikusi gabe."
+    },
+    {
+      "id": "0|6|hura",
+      "form": "zitekeen",
+      "sentence": "Lehen, gure hamsterra kartoizko hoditik sar ____."
+    },
+    {
+      "id": "0|7|ni",
+      "form": "ninteke",
+      "sentence": "Ate hori zabalagoa balitz, ni bizikletaz sar ____."
+    },
+    {
+      "id": "0|7|gu",
+      "form": "gintezke",
+      "sentence": "Itsasontzi bat bagenu, gu uhartera hel ____."
+    },
+    {
+      "id": "0|8|ni",
+      "form": "nadin",
+      "sentence": "Katuak ez du nahi ni aulkitik altxa ____."
+    },
+    {
+      "id": "0|8|gu",
+      "form": "gaitezen",
+      "sentence": "Irakasleak nahi du gu isil ____, baina gure urdailek zarata egiten dute."
+    },
+    {
+      "id": "0|9|hura",
+      "form": "zedin",
+      "sentence": "Anek atea ireki zuen, katua sar ____."
+    },
+    {
+      "id": "0|9|haiek",
+      "form": "zitezen",
+      "sentence": "Pailazoak keinuak egin zituen, haurrak barreka has ____."
+    },
+    {
+      "id": "0|10|zu",
+      "form": "zaitez",
+      "sentence": "Etor ____ hona, zure txakurrak txapela jan du eta!"
+    },
+    {
+      "id": "0|10|zuek",
+      "form": "zaitezte",
+      "sentence": "Isil ____ une batez, gure katuak bilera bat dauka!"
+    },
+    {
+      "id": "1|0|hura|niri",
+      "form": "zait",
+      "sentence": "Niri brokolia ez ____ gustatzen, txokolatez estalita ere ez."
+    },
+    {
+      "id": "1|0|haiek|guri",
+      "form": "zaizkigu",
+      "sentence": "Guri galtzerdi koloretsuak gustatzen ____."
+    },
+    {
+      "id": "1|0|hura|zuri",
+      "form": "zaizu",
+      "sentence": "Zuri katua motxilan sartu ____!"
+    },
+    {
+      "id": "1|0|haiek|haiei",
+      "form": "zaizkie",
+      "sentence": "Pinguinoei izotzezko izozkiak gustatzen ____."
+    },
+    {
+      "id": "1|1|hura|niri",
+      "form": "zitzaidan",
+      "sentence": "Atzo aterkia etxean ahaztu ____; hodeiek festa egin zuten."
+    },
+    {
+      "id": "1|1|haiek|zuri",
+      "form": "zitzaizkizun",
+      "sentence": "Atzo palomitak lurrera erori ____."
+    },
+    {
+      "id": "1|1|hura|guri",
+      "form": "zitzaigun",
+      "sentence": "Atzo hamsterra kaxatik atera ____."
+    },
+    {
+      "id": "1|2|hura|niri",
+      "form": "balitzait",
+      "sentence": "Niri ilea berde geratuko ____, zuhaitz baten itxura izango nuke."
+    },
+    {
+      "id": "1|2|haiek|guri",
+      "form": "balitzaizkigu",
+      "sentence": "Guri hegalak aterako ____, ez genuke autobusa hartuko."
+    },
+    {
+      "id": "1|3|hura|zuri",
+      "form": "litzaizuke",
+      "sentence": "Mokoa izango bazenu, txapel txikia ondo etorriko ____."
+    },
+    {
+      "id": "1|3|haiek|niri",
+      "form": "litzaizkidake",
+      "sentence": "Hanka gehiago banitu, zapata horiek ondo etorriko ____."
+    },
+    {
+      "id": "1|4|hura|niri",
+      "form": "zitzaidakeen",
+      "sentence": "Atzo laguntza eskatu banu, lana errazagoa egingo ____."
+    },
+    {
+      "id": "1|4|haiek|guri",
+      "form": "zitzaizkigukeen",
+      "sentence": "Aukera izan bagenu, txokolatezko gailetak ondo etorriko ____."
+    },
+    {
+      "id": "1|5|hura|guri",
+      "form": "dakiguke",
+      "sentence": "Guri ere halako ezusteko bat gerta ____: katua eskolara etortzea!"
+    },
+    {
+      "id": "1|5|hura|zuri",
+      "form": "dakizuke",
+      "sentence": "Kontuz, izotz gainean halakorik gerta ____."
+    },
+    {
+      "id": "1|6|hura|niri",
+      "form": "zekidakeen",
+      "sentence": "Lehen, niri ere halako ezusteko bat gerta ____."
+    },
+    {
+      "id": "1|7|hura|guri",
+      "form": "lekiguke",
+      "sentence": "Kontuz ibiliko ez bagina, guri ere halakorik gerta ____."
+    },
+    {
+      "id": "1|9|hura|guri",
+      "form": "zekigun",
+      "sentence": "Motxila itxi genuen, ezer eror ez ____."
+    },
+    {
+      "id": "1|10|hura|guri",
+      "form": "bekigu",
+      "sentence": "Zorte ona etor ____!"
+    },
+    {
+      "id": "1|10|haiek|guri",
+      "form": "bekizkigu",
+      "sentence": "Berri onak etor ____!"
+    },
+    {
+      "id": "2|0|hura|nik",
+      "form": "dut",
+      "sentence": "Nik galtzerdi bat aurkitu ____ hozkailuan."
+    },
+    {
+      "id": "2|0|haiek|guk",
+      "form": "ditugu",
+      "sentence": "Guk hiru gaileta ezkutatu ____; ez esan inori!"
+    },
+    {
+      "id": "2|0|ni|zuk",
+      "form": "nauzu",
+      "sentence": "Zuk ni dantzan ikusi ____; hori ez zen sekretua!"
+    },
+    {
+      "id": "2|0|hura|hark",
+      "form": "du",
+      "sentence": "Katuak teklatua ohe bihurtu ____."
+    },
+    {
+      "id": "2|0|haiek|haiek",
+      "form": "dituzte",
+      "sentence": "Txakurrek bi zapatila lurperatu ____."
+    },
+    {
+      "id": "2|1|hura|nik",
+      "form": "nuen",
+      "sentence": "Atzo nik txapela hozkailuan utzi ____."
+    },
+    {
+      "id": "2|1|haiek|zuk",
+      "form": "zenituen",
+      "sentence": "Atzo zuk bi azenario ezkutatu ____ motxilan."
+    },
+    {
+      "id": "2|1|hura|guk",
+      "form": "genuen",
+      "sentence": "Atzo guk ogitartekoa ahaztu ____; inurriek bazkaria izan zuten."
+    },
+    {
+      "id": "2|2|hura|nik",
+      "form": "banu",
+      "sentence": "Nik suziri bat izango ____, ilargian askalduko nuke."
+    },
+    {
+      "id": "2|2|haiek|zuk",
+      "form": "bazenitu",
+      "sentence": "Zuk hamar esku izango ____, pianoa bikain joko zenuke."
+    },
+    {
+      "id": "2|3|hura|guk",
+      "form": "genuke",
+      "sentence": "Diru gehiago bagenu, txokolatezko gaztelu bat erosiko ____."
+    },
+    {
+      "id": "2|3|haiek|nik",
+      "form": "nituzke",
+      "sentence": "Hamar txakur izango banitu, hamar izen barregarri asmatuko ____."
+    },
+    {
+      "id": "2|4|hura|nik",
+      "form": "nukeen",
+      "sentence": "Txirrina entzun ez banu, beste ogitarteko bat jango ____."
+    },
+    {
+      "id": "2|4|haiek|guk",
+      "form": "genituzkeen",
+      "sentence": "Kutxa zabalagoa izan balitz, komiki guztiak sartuko ____."
+    },
+    {
+      "id": "2|5|hura|zuk",
+      "form": "dezakezu",
+      "sentence": "Zuk marrazki bat egin ____ begiak itxita?"
+    },
+    {
+      "id": "2|5|ni|zuk",
+      "form": "nazakezu",
+      "sentence": "Zuk ni aurki ____ manta erraldoi honen azpian?"
+    },
+    {
+      "id": "2|5|haiek|guk",
+      "form": "ditzakegu",
+      "sentence": "Guk hamar globo puztu ____."
+    },
+    {
+      "id": "2|6|hura|guk",
+      "form": "genezakeen",
+      "sentence": "Txikitan, guk gaztelu bat eraiki ____ kartoizko kutxekin."
+    },
+    {
+      "id": "2|6|haiek|nik",
+      "form": "nitzakeen",
+      "sentence": "Lehen, nik bi katu marraztu ____ minutu batean."
+    },
+    {
+      "id": "2|7|hura|nik",
+      "form": "nezake",
+      "sentence": "Patinak banitu, nik pista osoa zeharka ____."
+    },
+    {
+      "id": "2|7|haiek|zuk",
+      "form": "zenitzake",
+      "sentence": "Denbora gehiago bazenu, zuk komiki horiek irakur ____."
+    },
+    {
+      "id": "2|8|hura|zuk",
+      "form": "dezazun",
+      "sentence": "Arkatza utziko dizut, zuk munstro bat marraz ____."
+    },
+    {
+      "id": "2|8|haiek|guk",
+      "form": "ditzagun",
+      "sentence": "Kutxa handi bat behar dugu, guk globoak gorde ____."
+    },
+    {
+      "id": "2|9|hura|hark",
+      "form": "zezan",
+      "sentence": "Anek pilota eman zion txakurrari, hark har ____."
+    },
+    {
+      "id": "2|9|haiek|guk",
+      "form": "genitzan",
+      "sentence": "Aitak kutxa ireki zuen, guk jostailuak har ____."
+    },
+    {
+      "id": "2|10|hura|zuk",
+      "form": "ezazu",
+      "sentence": "Har ____ aterkia; hodeiek ez dute bromarik ulertzen!"
+    },
+    {
+      "id": "2|10|haiek|zuek",
+      "form": "itzazue",
+      "sentence": "Gorde ____ gailetak, gure katua sukaldari bihurtu aurretik!"
+    },
+    {
+      "id": "3|0|hura|niri|zuk",
+      "form": "didazu",
+      "sentence": "Zuk niri gaileta erraldoi bat eman ____; mahai erdia hartu du!"
+    },
+    {
+      "id": "3|0|haiek|zuri|nik",
+      "form": "dizkizut",
+      "sentence": "Nik zuri galtzerdi hegalariak ekarri ____."
+    },
+    {
+      "id": "3|0|hura|guri|hark",
+      "form": "digu",
+      "sentence": "Katuak guri opari bat ekarri ____: galtzerdi zahar bat!"
+    },
+    {
+      "id": "3|0|haiek|hari|guk",
+      "form": "dizkiogu",
+      "sentence": "Guk hamsterrari bi gurpil erosi ____; ez daki zeinetan korrika egin."
+    },
+    {
+      "id": "3|1|hura|niri|zuk",
+      "form": "zenidan",
+      "sentence": "Atzo zuk niri koilara bat eman ____ izozkia jateko, baina izozkirik ez!"
+    },
+    {
+      "id": "3|1|haiek|zuri|nik",
+      "form": "nizkizun",
+      "sentence": "Atzo nik zuri bi marrazki bidali ____: bi katu astronauta."
+    },
+    {
+      "id": "3|1|haiek|guri|haiek",
+      "form": "zizkiguten",
+      "sentence": "Atzo lagunek guri hamar puxika ekarri ____."
+    },
+    {
+      "id": "3|2|hura|niri|zuk",
+      "form": "bazenit",
+      "sentence": "Zuk niri suziri bat emango ____, ilargira joango nintzateke."
+    },
+    {
+      "id": "3|2|haiek|zuri|nik",
+      "form": "banizkizu",
+      "sentence": "Nik zuri hamar gaileta emango ____, zenbat geratuko lirateke?"
+    },
+    {
+      "id": "3|3|hura|zuri|nik",
+      "form": "nizuke",
+      "sentence": "Hodeiak saltzen banitu, nik zuri bat oparituko ____."
+    },
+    {
+      "id": "3|3|haiek|hari|guk",
+      "form": "genizkioke",
+      "sentence": "Txakurra alkatea balitz, guk hari bi domina emango ____."
+    },
+    {
+      "id": "3|4|hura|niri|zuk",
+      "form": "zenidakeen",
+      "sentence": "Atzo etorri izan banintz, zuk niri txapel bat emango ____."
+    },
+    {
+      "id": "3|4|haiek|zuri|nik",
+      "form": "nizkizukeen",
+      "sentence": "Dirua izan banu, nik zuri bi txokolate erosiko ____."
+    },
+    {
+      "id": "3|5|hura|niri|zuk",
+      "form": "diezadakezu",
+      "sentence": "Zuk niri gaileta bat eman ____? Nire urdaila abesten ari da!"
+    },
+    {
+      "id": "3|5|haiek|guri|hark",
+      "form": "diezazkiguke",
+      "sentence": "Irakasleak guri bi pista eman ____."
+    },
+    {
+      "id": "3|5|haiek|zuri|nik",
+      "form": "diezazkizuket",
+      "sentence": "Nik zuri bi marrazki egin ____."
+    },
+    {
+      "id": "3|6|hura|hari|guk",
+      "form": "geniezaiokeen",
+      "sentence": "Lehen, guk katuari jostailu bat eman ____."
+    },
+    {
+      "id": "3|6|haiek|niri|zuk",
+      "form": "zeniezazkidakeen",
+      "sentence": "Atzo, zuk niri bi aholku eman ____, baina ez nizun galdetu."
+    },
+    {
+      "id": "3|7|hura|niri|zuk",
+      "form": "zeniezadake",
+      "sentence": "Denbora izango bazenu, zuk niri pista bat eman ____."
+    },
+    {
+      "id": "3|7|haiek|hari|guk",
+      "form": "geniezazkioke",
+      "sentence": "Dirua bagenu, guk pinguinoari bi bufanda eros ____."
+    },
+    {
+      "id": "3|8|hura|niri|zuk",
+      "form": "diezadazun",
+      "sentence": "Eskua luzatu dut, zuk niri gaileta eman ____."
+    },
+    {
+      "id": "3|8|haiek|zuri|nik",
+      "form": "diezazkizudan",
+      "sentence": "Bi gutun prestatu ditut, zuk esan bezala nik zuri bidal ____."
+    },
+    {
+      "id": "3|9|hura|niri|zuk",
+      "form": "zeniezadan",
+      "sentence": "Atzo eskua luzatu nuen, zuk niri pilota eman ____."
+    },
+    {
+      "id": "3|9|haiek|hari|guk",
+      "form": "geniezazkion",
+      "sentence": "Irakasleak kutxa ireki zuen, guk katuari jostailuak eman ____."
+    },
+    {
+      "id": "3|10|hura|niri|zuk",
+      "form": "iezadazu",
+      "sentence": "Eman ____ koilara, postrea ihes egin aurretik!"
+    },
+    {
+      "id": "3|10|haiek|guri|zuek",
+      "form": "iezazkiguzue",
+      "sentence": "Eman ____ bi pista, detektibeak gara eta!"
+    },
+    {
+      "id": "1|8|hura|niri",
+      "form": "dakidan",
+      "sentence": "Aterkia hartuko dut, euriarekin ezustekorik gerta ez ____."
+    },
+    {
+      "id": "1|8|hura|zuri",
+      "form": "dakizun",
+      "sentence": "Kontuz ibili, halakorik gerta ez ____!"
+    }
+  ],
+  "trinko": [
+    {
+      "id": "tr|joan|0|ni|-",
+      "form": "noa",
+      "sentence": "Ni eskolara ____ pijamaz!"
+    },
+    {
+      "id": "tr|joan|1|gu|-",
+      "form": "gindoazen",
+      "sentence": "Atzo gu hondartzara ____ bufandarekin."
+    },
+    {
+      "id": "tr|joan|0|haiek|-",
+      "form": "doaz",
+      "sentence": "Ahateak eskolara ____ ilaran."
+    },
+    {
+      "id": "tr|etorri|0|zu|-",
+      "form": "zatoz",
+      "sentence": "Zu etxera ____ txapela buruz behera duzula."
+    },
+    {
+      "id": "tr|etorri|0|gu|-",
+      "form": "gatoz",
+      "sentence": "Gu gailetak jatera ____!"
+    },
+    {
+      "id": "tr|etorri|1|hura|-",
+      "form": "zetorren",
+      "sentence": "Atzo txakurra ____ pilotarekin ahoan."
+    },
+    {
+      "id": "tr|egon|0|ni|-",
+      "form": "nago",
+      "sentence": "Ni armairu barruan ____ ezkutatuta."
+    },
+    {
+      "id": "tr|egon|1|gu|-",
+      "form": "geunden",
+      "sentence": "Atzo gu zineman ____ palomita artean."
+    },
+    {
+      "id": "tr|egon|0|haiek|-",
+      "form": "daude",
+      "sentence": "Katuak kutxa baten barruan ____."
+    },
+    {
+      "id": "tr|ibili|0|ni|-",
+      "form": "nabil",
+      "sentence": "Ni etxean ____ zapatila bakarrarekin."
+    },
+    {
+      "id": "tr|ibili|0|gu|-",
+      "form": "gabiltza",
+      "sentence": "Gu ____ galdutako gaileten bila."
+    },
+    {
+      "id": "tr|ibili|1|haiek|-",
+      "form": "zebiltzan",
+      "sentence": "Atzo ahateak patioan ____ ilaran."
+    },
+    {
+      "id": "tr|jakin|0|nik|sg",
+      "form": "dakit",
+      "sentence": "Nik ____ non dagoen azken gaileta."
+    },
+    {
+      "id": "tr|jakin|0|guk|pl",
+      "form": "dakizkigu",
+      "sentence": "Guk pinguinoaren sekretu guztiak ____."
+    },
+    {
+      "id": "tr|jakin|1|hark|sg",
+      "form": "zekien",
+      "sentence": "Atzo Anek ____ non zegoen txapela."
+    },
+    {
+      "id": "tr|eduki|0|nik|sg",
+      "form": "daukat",
+      "sentence": "Nik galtzerdi bat ____ poltsikoan."
+    },
+    {
+      "id": "tr|eduki|0|guk|pl",
+      "form": "dauzkagu",
+      "sentence": "Guk hamar globo ____ sabaian."
+    },
+    {
+      "id": "tr|eduki|1|zuk|pl",
+      "form": "zeneuzkan",
+      "sentence": "Atzo zuk bi koilara ____ motxilan."
+    },
+    {
+      "id": "tr|ekarri|0|hark|sg",
+      "form": "dakar",
+      "sentence": "Txakurrak zapatila bat ____ ahoan."
+    },
+    {
+      "id": "tr|ekarri|0|nik|pl",
+      "form": "dakartzat",
+      "sentence": "Nik bi pizza ____"
+    },
+    {
+      "id": "tr|ekarri|1|guk|sg",
+      "form": "genekarren",
+      "sentence": "Atzo guk kutxa bat ____ buru gainean."
+    },
+    {
+      "id": "tr|eraman|0|zuk|sg",
+      "form": "daramazu",
+      "sentence": "Zuk txapela ____ ukondoan!"
+    },
+    {
+      "id": "tr|eraman|0|haiek|pl",
+      "form": "daramatzate",
+      "sentence": "Pailazoek hiru maleta ____ gurpil gainean."
+    },
+    {
+      "id": "tr|eraman|1|nik|sg",
+      "form": "neraman",
+      "sentence": "Atzo nik aterkia ____ eguzkipean."
+    }
+  ],
+  "skipped": [],
+  "checks": [
+    "Exact person-role ID and expected form matched existing entry",
+    "Exactly one blank",
+    "Previous example retained if replaced",
+    "Conjugations and variants unchanged",
+    "All scripts parse"
+  ],
+  "limits": "No independent linguistic review or complete table audit in this change; previous 95 quarantined examples retained. New examples are original educational examples, not official quotations."
+}
